@@ -110,7 +110,6 @@ has_many :items
 ### Association
 has_many :items
 
-
 ## Brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
