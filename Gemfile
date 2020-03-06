@@ -78,6 +78,6 @@ end
 
 
 
-gem 'haml_rails'
+gem 'haml-rails'
 
 gem 'ancestry'
