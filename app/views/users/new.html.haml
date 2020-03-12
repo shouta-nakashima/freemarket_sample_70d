@@ -1,1 +1,97 @@
-新規登録画面
+.singie-container
+  .single-header
+    %h1
+      %a
+        = image_tag "logo.png"
+    %nav.progress-bar.singnup-bar
+      %ol.clearfix
+        %li.active
+          会員情報
+          .progress-status
+          .progress-status::after
+        %li
+          完了
+          .progress-status
+        
+%main.single-main
+  %section.single-main__first
+    %h2.head-title
+      会員情報入力
+    .head-content
+      .head-contet-Item
+        %label ニックネーム
+        %span 必須
+      = form_with(model: @tweet, local: true) do |form|
+        = form.text_field :name, placeholder: "例）やまだ"
+      .head-contet-Item
+        %label メールアドレス
+        %span 必須
+      = form_with(model: @tweet, local: true) do |form|
+        = form.text_field :mail, placeholder: "PC・携帯どちらでも可"
+    .head-content-pass
+      .head-contet-pass-Item
+        %label パスワード
+        %span 必須
+      = form_with(model: @tweet, local: true) do |form|
+        = form.text_field :text, placeholder: "7文字以上の半角英数字", rows: "7"
+      %p ※ 英字と数字の両方を含めて設定してください
+      = form_with(model: @tweet, local: true) do |form|
+        = form.check_box :text, placeholder: "", class: "check_box"
+        %label パスワードを表示する
+    %section.single-main__second
+      %h3 
+        本人確認
+        %p 
+          安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+    %section.single-main__third
+      .head-contet-Item
+        %label お名前(全角)
+        %span 必須
+      = form_with(model: @user, local: true) do |form|
+        = form.text_field :name, placeholder: "例）山田"
+        = form.text_field :name, placeholder: "例）太郎"
+      .head-contet-Item
+        %label お名前カナ(全角)
+        %span 必須
+      = form_with(model: @user, local: true) do |form|
+        = form.number_field :name, placeholder: "例）ヤマダ"
+        = form.text_field :name, placeholder: "例）タロウ"
+    .head-content__birthday
+      .head-contet-Item
+        %label 生年月日
+        %span 必須
+      = form_with(model: @tweet, local: true, class: "test-from11") do |form|
+        != sprintf(form.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+    %p.text
+      ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+    %section.single-main__fourth
+      .TermsOfService
+        .Text
+          「次へ進む」のボタンを押すことにより、
+          %a{:href => "#"} 利用規約
+          に同意したものとみなします
+    %section.continue_btn
+      = form_with(model: @tweet, local: true) do |form|
+        = form.submit "次に進む"
+    %p.TexT
+      %a{:href => "#"} 本人情報の登録について
+    %section.form-group
+      .form-group-text
+        This site is protected by reCAPTCHA and the Google 
+        %a{:href => "#"} Privacy Policy
+        and
+        %a{:href => "#"} Terms of Service
+        apply
+%footer.single_footer
+  %nav
+    %ul
+      %li
+        %a{:href=>"#"} プライバシーポリシー
+      %li
+        %a{:href=>"#"} メルカリ利用規約
+      %li
+        %a{:href=>"#"} 特定商取引に関する表記
+    %a.logo-img
+      = image_tag "logo-white.png" 
+    %a.logo-text
+      %Small © Furima
