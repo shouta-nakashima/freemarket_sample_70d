@@ -269,6 +269,7 @@
           width: 402px;
           text-align: center;
           a{
+            text-decoration: none;
             color: rgb(0, 162, 255);            
           }
         }
@@ -293,6 +294,7 @@
       padding-left: 150px;
       background-color: white;
       a{
+        text-decoration: none;
         color: rgb(0, 162, 255);
       }
     }
@@ -306,6 +308,7 @@
         padding: 10px;
         margin: auto;
         a{
+          text-decoration: none;
           color: rgb(0, 162, 255);
         }
       }
@@ -330,6 +333,7 @@
         display: inline-block;
         margin: 0 18px 0 18px;
         a{
+          text-decoration: none;
           font-size: 8px;
           color: black;
         }
@@ -347,6 +351,7 @@
       margin-left: 200px;
       Small{
         display: inline-block;
+       
       }
     }
   }

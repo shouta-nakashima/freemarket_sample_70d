@@ -68,29 +68,36 @@
       .TermsOfService
         .Text
           「次へ進む」のボタンを押すことにより、
-          %a{:href => "#"} 利用規約
+          = link_to root_path do  
+            = "本人確認"
           に同意したものとみなします
     %section.continue_btn
       = form_with(model: @tweet, local: true) do |form|
         = form.submit "次に進む"
     %p.TexT
-      %a{:href => "#"} 本人情報の登録について
+      = link_to root_path do  
+        = "本人情報の登録について" 
     %section.form-group
       .form-group-text
         This site is protected by reCAPTCHA and the Google 
-        %a{:href => "#"} Privacy Policy
+        = link_to root_path do  
+          = "Privacy Policy"  
         and
-        %a{:href => "#"} Terms of Service
+        = link_to root_path do  
+          = "Terms of Service" 
         apply
 %footer.single_footer
   %nav
     %ul
       %li
-        %a{:href=>"#"} プライバシーポリシー
+        = link_to root_path do  
+          = "プライバシーポリシー"  
       %li
-        %a{:href=>"#"} メルカリ利用規約
+        = link_to root_path do  
+          = "メルカリ利用規約"  
       %li
-        %a{:href=>"#"} 特定商取引に関する表記
+        = link_to root_path do  
+          = "特定商取引に関する表記"  
     %a.logo-img
       = image_tag "logo-white.png" 
     %a.logo-text
