@@ -7,10 +7,16 @@ DB設計
 |nickname|string|null: false|
 |password|string|null: false|
 |email|string|null: false, unique: true, index: true|
+|first_name|string|null: false|
+|first_name_kana|string|null: false|
+|family_name|string|null: false|
+|family_name_kana|string|null: false|
+|birth_year|date|null: false|
+|birth_month|date|null: false|
+|birth_day|date|null: false|
 ### Association
 has_many :seller_items, foreign_key: "seller_id", class_name: "items"
 has_many :buyer_items, foreign_key: "buyer_id", class_name: "items"
-has_one :profile, dependent: :destroy
 has_one :destination, dependent: :destroy
 has_one :credit_card, dependent: :destroy
 ## Itemsテーブル
@@ -55,19 +61,6 @@ belongs_to :buyer, class_name: "User"
 |building_name|string|
 |phone_number|integer|unique: true|
 |user_id|references|null: false, foreign_key :true|
-### Association
-belongs_to :user
-## Profilesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|first_name|string|null: false|
-|first_name_kana|string|null: false|
-|family_name|string|null: false|
-|family_name_kana|string|null: false|
-|birth_year|date|null: false|
-|birth_month|date|null: false|
-|birth_day|date|null: false|
-|user_id|references|null: false, foreign_key: true|
 ### Association
 belongs_to :user
 ## Credit_cards(pay.jp)テーブル

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def creat
+    
   end
 
   def desroy
