@@ -14,11 +14,17 @@ DB設計
 |birth_year|date|null: false|
 |birth_month|date|null: false|
 |birth_day|date|null: false|
+|post_code|integer(7)|null: false|
+|prefecture_code|integer|null: false|
+|city|string|null: false|
+|house_number|integer|null: false, unique: true|
+|building_name|string|
+|phone_number|integer|unique: true|
 ### Association
 has_many :seller_items, foreign_key: "seller_id", class_name: "items"
 has_many :buyer_items, foreign_key: "buyer_id", class_name: "items"
-has_one :destination, dependent: :destroy
 has_one :credit_card, dependent: :destroy
+
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -47,22 +53,6 @@ belongs_to_active_hash :postage_type
 belongs_to :brand
 belongs_to :seller, class_name: "User"
 belongs_to :buyer, class_name: "User"
-## Destinationsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|first_name|string|null: false|
-|first_name_kana|string|null: false|
-|family_name|string|null: false|
-|family_name_kana|string|null: false|
-|post_code|integer(7)|null: false|
-|prefecture_code|integer|null: false|
-|city|string|null: false|
-|house_number|integer|null: false, unique: true|
-|building_name|string|
-|phone_number|integer|unique: true|
-|user_id|references|null: false, foreign_key :true|
-### Association
-belongs_to :user
 ## Credit_cards(pay.jp)テーブル
 |Column|Type|Options|
 |------|----|-------|
