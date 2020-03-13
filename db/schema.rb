@@ -41,6 +41,12 @@ ActiveRecord::Schema.define(version: 2020_03_12_085530) do
     t.date "birth_year", null: false
     t.date "birth_month", null: false
     t.date "birth_day", null: false
+    t.bigint "post_code", null: false
+    t.integer "prefecture_code", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "bilding_name"
+    t.integer "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
