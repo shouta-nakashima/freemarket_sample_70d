@@ -14,6 +14,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.date :birth_year,           null: false
       t.date :birth_month,          null: false
       t.date :birth_day,            null: false
+      t.integer :post_code, limit: 7,         null: false
+      t.integer :prefecture_code,   null: false
+      t.string :city,               null: false
+      t.string :house_number,       null: false
+      t.string :bilding_name
+      t.integer :phone_number,      unique: true
 
       ## Recoverable
       t.string   :reset_password_token
