@@ -1,1 +1,5 @@
-出品管理ページ
+items/edit.html.haml (edit）出品管理ページ<br><br>
+
+= link_to '更新ボタン　update  method: :patch', item_path(@item.id), method: :patch
+-# = link_to '削除ボタン', item_path(@item.id), method: :delete
+<br><br>デモデータが消えるので削除リンクは取りあえすコメントアウトしとります

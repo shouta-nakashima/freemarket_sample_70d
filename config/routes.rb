@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     resources :plofiles, only: [:new, :create]
     resources :destinations, only: [:edit, :update]
   end
-  resources :items, only: [:index, :new, :create, :destroy, :show,:edit]
+  resources :items, only: [:new, :create, :destroy, :show, :edit, :update]
 end
