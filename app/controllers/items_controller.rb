@@ -13,13 +13,18 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
   
-  def update
-    # redirect_to item_path
-  end
 
   def show
+    
     @item = Item.find(params[:id])
   end
+
+
+  def update
+    @item = Item.find(params[:id])
+  end
+
+
 
   def destroy
     item = Item.find(params[:id])
