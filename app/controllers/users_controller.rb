@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  # allメソッドではidが無いと怒られるのでとりあえずfindメソッド配列１指定
   def index
     @item = Item.find(1)
   end

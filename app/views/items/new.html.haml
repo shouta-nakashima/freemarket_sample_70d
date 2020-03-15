@@ -1,6 +1,24 @@
-items/new.html.haml (新規作成)商品出品ページ
+items/new.html.haml (new新規作成)商品出品ページ
 
 <br><br>
 
-入力フォームとcreateアクション・POSTメソッドボタンを作ってください
 
+
+= form_with(model: @item, local: true) do |form|
+
+  = form.text_field :name, placeholder: "商品名"
+  = form.text_area :introduction, placeholder: "商品説明"
+  = form.text_area :price, placeholder: "価格"
+  = form.text_area :prefecture_code, placeholder: "県番号"
+  = form.text_area :item_images_id, placeholder: "商品画像id"
+  = form.text_area :category_id, placeholder: "カテゴリー選択id"
+  = form.text_area :brand_id, placeholder: "ブランドid"
+  = form.text_area :item_condition_id, placeholder: "コンディションid"
+  = form.text_area :preparation_day_id, placeholder: "準備日数id"
+  = form.text_area :postage_payer_id, placeholder: "送料負担id"
+  = form.text_area :size_id, placeholder: "サイズid"
+  = form.text_area :seller_id, placeholder: "出品者id"
+  = form.text_area :buyer_id, placeholder: "購入者id"
+
+
+  = form.submit "出品するボタン(crateアクション)"
