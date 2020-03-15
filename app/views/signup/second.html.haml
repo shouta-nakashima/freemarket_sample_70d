@@ -1,17 +1,19 @@
 .singie-container
   .single-header
     %h1
-      %a
+      %a.signUp-thirdIcon{:href => "/"}
         = image_tag "logo.png"
-    %nav.progress-bar.singnup-bar
-      %ol.clearfix
-        %li.active
-          会員情報
-          .progress-status
-          .progress-status::after
-        %li
-          完了
-          .progress-status
+    %nav.signUp-second-bar
+      %ol.signUp-second-clearfix
+        %li.signUp-second-active
+          %text 会員情報
+          .signUp-second-status
+        %li.signUp-second-active-sec
+          %text 発送元情報
+          .signUp-second-status-second
+        %li.signUp-second-active-third
+          %text 完了
+          .signUp-second-status-third
         
 %main.single-main
   %section.single-main__first
@@ -35,9 +37,13 @@
       = form_with(model: @tweet, local: true) do |form|
         = form.text_field :text, placeholder: "7文字以上の半角英数字", rows: "7"
       %p ※ 英字と数字の両方を含めて設定してください
+    .head-content-pass
+      .head-contet-pass-Item
+        %label パスワード(確認用)
+        %span 必須
       = form_with(model: @tweet, local: true) do |form|
-        = form.check_box :text, placeholder: "", class: "check_box"
-        %label パスワードを表示する
+        = form.text_field :text, placeholder: "7文字以上の半角英数字", rows: "7"
+      %p ※ 英字と数字の両方を含めて設定してください
     %section.single-main__second
       %h3 
         本人確認
@@ -73,7 +79,10 @@
           に同意したものとみなします
     %section.continue_btn
       = link_to third_signup_index_path do  
-        = "a"
+        .signUp-continue-btn__box
+          .signUp-continue-btns
+            = form_with model: @user do |form|
+              = form.submit "次へ進む"
     %p.TexT
       = link_to root_path do  
         = "本人情報の登録について" 

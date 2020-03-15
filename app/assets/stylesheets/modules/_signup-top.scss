@@ -1,0 +1,136 @@
+.signUp-top {
+  &__header {
+    height: 128px;
+    background-color: #f5f5f5;
+    h1 {
+      margin: auto;
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+      padding: 40px 0 0;
+      a {
+        img {
+          width: 185px;
+          height: 49px;
+          line-height: 49px;
+        }
+      }
+    }
+  }
+  &__main {
+    display: block;
+    background-color: #f5f5f5;
+    &__content {
+      width: 700px;
+      margin: 0 auto;
+      background-color: white;
+      .signUp-text {
+        font-size: 22px;
+        padding: 32px;
+        text-align: center;
+        border-bottom: 1px solid #f5f5f5;
+      }
+      .signUp-forms {
+        margin-top: 40px;
+        padding-bottom: 60px;
+        .signUp-form-email {
+          margin: 0 0 10px 180px;
+          button {
+            display: flex;
+            height: 52px;
+            width: 343px;
+            background-color: #ea352d;
+            border-radius: 6px;
+            a {
+              margin: auto;
+              color: white;
+              text-decoration: none;
+              font-size: 16px;
+            }
+            img {
+              height: 30px;
+            }
+          }
+        }
+        .signUp-form-fb {
+          margin: 20px 0 20px 180px;
+          button {
+            display: flex;
+            height: 52px;
+            width: 343px;
+            background-color: #385185;
+            border-radius: 6px;
+            a {
+              margin: auto;
+              color: white;
+              text-decoration: none;
+              font-size: 16px;
+            }
+            img {
+              height: 30px;
+            }
+          }
+        }
+        .signUp-form-google {
+          margin: 0 0 0 180px;
+          button {
+            display: flex;
+            height: 52px;
+            width: 343px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            a {
+              margin: auto;
+              color: black;
+              text-decoration: none;
+              font-size: 16px;
+            }
+            img {
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .signUp-topFooter{
+    background-color: #f5f5f5;
+    nav{
+      margin: 0px 175.5px;
+      padding: 40px 0;
+      width: 456px;
+      height: 220px;
+      margin: 0 auto;
+      ul{
+        text-align: center;
+        display: flex;
+        margin-left: 30px;
+        margin-bottom: 30px;
+        li{
+          display: inline-block;
+          margin: 0 18px 0 18px;
+          a{
+            text-decoration: none;
+            font-size: 8px;
+            color: black;
+          }
+        }
+      }
+      .logo-img{
+        margin: 160px;
+        padding-top: 30px;
+        img{
+          width: 170px;
+          display: inline-block;
+        }
+      }
+      .logo-text{
+        margin-left: 200px;
+        Small{
+          display: inline-block;
+         
+        }
+      }
+    }
+  }
+}
