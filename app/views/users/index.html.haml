@@ -16,11 +16,19 @@
         %li.listLeft__item
           %a{:href => "#"} ブランド
       %ul.listRight
-        %li.listRight__item-login
-          %a{:href => "#"} ログイン
-        %li.listRight__item-new
-          = link_to top_signup_index_path do
-            = "新規会員登録"
+        - if user_signed_in?
+          = link_to current_user, user_path(current_user) 
+          = link_to "マイページ", user_path, class:"listRight__item-new"
+          = link_to "ログアウト", destroy_user_session_path, class:"listRight__item-login"
+        - else
+          = link_to "ログイン", new_user_session_path,class:"listRight__item-new"
+          = link_to "新規登録", top_signup_index_path, class:"listRight__item-login"
+        -# %li.listRight__item-login
+        -#   = link_to new_user_session_path do
+        -#     = "ログイン"
+        -# %li.listRight__item-new
+        -#   = link_to top_signup_index_path do
+        -#     = "新規会員登録"
 .top-main
   %section.mainVisual
     .mainContent
