@@ -13,16 +13,12 @@
       .nav
         %ul.listLeft
           %li.listLeft__item-first
-            %a{:href => "#"} カテゴリー
+            = link_to "カテゴリー","#"
           %li.listLeft__item
-            %a{:href => "#"} ブランド
+            = link_to "ブランド","#"
         %ul.listRight
-          -# %li.listRight__item-login
-          -#   %a{:href => "#"} ログイン
-          -# %li.listRight__item-new
-          -#   %a{:href => "#"} 新規会員登録
           %li.listRight__item-mypage
-            %a{:href => "#"} マイページ
+            = link_to "マイページ","#"
 
   .item-box
     .item-name
@@ -221,13 +217,13 @@
   .list-container
     %ul
       %li 
-        %a{:href => "#"} FURIMA
+        = link_to "FURIMA","#"
       %li 
-        %a{:href => "#"} ＞ スポーツ用品
+        = link_to "＞ スポーツ用品","#"
       %li 
-        %a{:href => "#"} ＞ 野 球
+        = link_to "＞ 野 球","#"
       %li 
-        %a{:href => "#"} ＞ バット
+        = link_to "＞ バット","#"
 
 
 
@@ -239,9 +235,9 @@
     %p.inner__text
       今すぐ無料ダウンロード！
     .inner__icon
-      %a.aBtn{:href => "#"}
+      = link_to "#",class:"aBtn"
         = image_tag "apps.png"
-      %a.bBtn{:href => "#"}
+      = link_to "#",class:"bBtn"
         = image_tag "google-play.png"
 
 .top-footer
@@ -251,37 +247,37 @@
         FURIMAについて
       %ul
         %li
-          %a{:href => "#"} 会社概要（運営会社）
+          = link_to "会社概要（運営会社）","#"
         %li
-          %a{:href => "#"} プライバシーポリシー
+          = link_to "プライバシーポリシー","#"
         %li
-          %a{:href => "#"} FURIMA利用規約
+          = link_to "FURIMA利用規約","#"
         %li
-          %a{:href => "#"} ポイントに関する特約
+          = link_to "ポイントに関する特約","#"
     %li.content
       %h2.content__head
         FURIMAを見る
       %ul
         %li
-          %a{:href => "#"} カテゴリー一覧
+          = link_to "カテゴリー一覧","#"
         %li
-          %a{:href => "#"} ブランド一覧
+        = link_to "ブランド一覧","#"
     %li.content
       %h2.content__head
         ヘルプ＆ガイド
       %ul
         %li
-          %a{:href => "#"} FURIMAガイド
+          = link_to "FURIMAガイド","#"
         %li
-          %a{:href => "#"} FURIMAロゴ利用ガイドライン
+          = link_to "FURIMAロゴ利用ガイドライン","#"
         %li
-          %a{:href => "#"} お知らせ
+          = link_to "お知らせ","#"
   .top-footer__logo
-    %a{:href => "/"}
+    = link_to "/"
       = image_tag "logo-white.png"
     %p ©︎ FURIMA
   .purchaseBtn
-    %a{:href => new_item_path}
+    = link_to new_item_path"
       %span.purchaseBtn__text 出品する
       .purchaseBtn__icon
         = image_tag "icon_camera.png"

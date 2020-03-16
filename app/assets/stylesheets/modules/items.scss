@@ -76,22 +76,11 @@
           display: flex;
           position: relative;
           margin-left: auto;
-          // &__item-login {
-          //   line-height: 32px;
-          //   padding: 0 0 0 16px;
             a {
               text-decoration: none;
               color: #333;
             }
           }
-          // &__item-new {
-          //   line-height: 32px;
-          //   padding: 0 0 0 16px;
-          //   a {
-          //     text-decoration: none;
-          //     color: #333;
-          //   }
-          // }
           &__item-mypage {
             line-height: 32px;
             padding: 0 0 0 16px;
@@ -248,7 +237,7 @@
     width: 700px;
     height: 800px;
     .item-description-inner{
-      padding: 5px 5px 5px 5px;
+      padding: 5px ;
       margin-left: auto;
       margin-right:auto ;
       background-color: white;
@@ -271,7 +260,7 @@
       width: 700px;
     }
     .message-container{
-      padding: 5px 5px 5px 5px;
+      padding: 5px;
       margin-left: auto;
       margin-right:auto ;
       background-color: #fff6de;
@@ -327,13 +316,13 @@
       margin-left: auto;
       margin-right:auto ;
       .facebook-square{
-        margin: 30px 15px 30px 15px;
+        margin: 30px 15px;
       }
       .twitter-square{
-        margin: 30px 15px 30px 15px;
+        margin: 30px 15px;
       }
       .line-square{
-        margin: 30px 15px 30px 15px;
+        margin: 30px 15px;
       }
     }
   }
@@ -362,7 +351,7 @@
       margin-right:auto ;
       .other-item-list{
         text-align: center;
-        margin: 5px 5px 5px 5px;
+        margin: 5px ;
         width: 210px;
         height: 330px;
         background-color: white;
