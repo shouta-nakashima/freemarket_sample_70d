@@ -6,19 +6,19 @@
           = image_tag "logo.png"
         .searchBox
           .form
-            %input#searchInput.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
-            %button{:type => "submit"}
+            %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}
+            %button{type: "submit"}
               .searchBox__icon
                 = image_tag "icon-search 1.png"
       .nav
         %ul.listLeft
           %li.listLeft__item-first
-            = link_to "カテゴリー","#"
+            =link_to "カテゴリー","/"
           %li.listLeft__item
-            = link_to "ブランド","#"
+            =link_to "ブランド","/"
         %ul.listRight
           %li.listRight__item-mypage
-            = link_to "マイページ","#"
+            =link_to "マイページ","/"
 
   .item-box
     .item-name
@@ -34,7 +34,7 @@
             .dots-D
             .dots-E
       %section.visible-sp
-        %table{:border => "1"}
+        %table
           %tr
             %th 出  品  者
             %td 俺
@@ -69,7 +69,7 @@
           %span.tax="(税込)"
           %span.Postage 送料込み
       .buybtn
-        %a{:href => "#"}購入画面に進む
+        =link_to "購入画面に進む","/"
 
     .item-dicription-content
       .item-description-inner
@@ -100,29 +100,29 @@
       .message-container
         %p.attention 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分と<br>なることがあります。
       .text-box
-        %textarea{:class => "textarea"} 
+        %textarea{class: "textarea"}
       .btn-box
-        %input{:type => "submit", :class =>"comment-btn",:value => "コメントする"}/
+        %input{type:"submit", class:"comment-btn",value: "コメントする"}
 
     .social-media-content
       .social-media-box
         .facebook-square
           = link_to "http://www.facebook.com/share.php?u=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm82831756786%2F" do
-            = icon('fab', 'facebook-square fa-3x', class: 'facebook', :style => "color: #3B5998")
+            = icon('fab', 'facebook-square fa-3x', class: 'facebook', style: "color: #3B5998")
         .twitter-square
           = link_to "http://www.facebook.com/share.php?u=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm82831756786%2F" do
-            = icon('fab', 'twitter-square fa-3x', class: 'twitter',:style => "color: #55acee;")
+            = icon('fab', 'twitter-square fa-3x', class: 'twitter',style: "color: #55acee;")
         .line-square
           = link_to "http://www.facebook.com/share.php?u=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm82831756786%2F" do
-            = icon('fab', 'line fa-3x', class: 'line',:style => "color: #00c300;")
+            = icon('fab', 'line fa-3x', class: 'line',style: "color: #00c300;")
 
 
     .other-item-content
       %h2.other-item-head
-        %a.head-title{:href => "https://www.mercari.com/jp/u/289247489/"} ●●さんのその他の出品
+        = link_to "●●さんのその他の出品","/"
       .other-item-container
         .other-item-list
-          %a.otherA{"data-method" => "GET",:href => item_path(@item)}
+          %a.otherA{method: "GET",href: item_path(@item)}
             %figure.otherA--img
               = image_tag "samp3.jpg",width: "200"
             .otherA--body
@@ -136,7 +136,7 @@
                       = "0"
                 %p (税込)
         .other-item-list
-          %a.otherA{"data-method" => "GET",:href => item_path(@item)}
+          %a.otherA{method: "GET",href: item_path(@item)}
             %figure.otherA--img
               = image_tag "samp5.jpg",width: "200"
             .otherA--body
@@ -150,7 +150,7 @@
                       = "0"
                 %p (税込)
         .other-item-list
-          %a.otherA{"data-method" => "GET",:href => item_path(@item)}
+          %a.otherA{method: "GET",href: item_path(@item)}
             %figure.otherA--img
               = image_tag "samp4.jpg",width: "200"
             .otherA--body
@@ -167,10 +167,10 @@
 
     .other-item-content
       %h2.other-item-head
-        %a.head-title{:href => "https://www.mercari.com/jp/u/289247489/"} スポーツ 野球 のその他の商品
+        = link_to "スポーツ 野球 のその他の商品","/"
       .other-item-container
         .other-item-list
-          %a.otherA{"data-method" => "GET",:href => item_path(@item)}
+          %a.otherA{method: "GET",href: item_path(@item)}
             %figure.otherA--img
               = image_tag "samp3.jpg",width: "200"
             .otherA--body
@@ -184,7 +184,7 @@
                       = "0"
                 %p (税込)
         .other-item-list
-          %a.otherA{"data-method" => "GET",:href => item_path(@item)}
+          %a.otherA{method: "GET",href: item_path(@item)}
             %figure.otherA--img
               = image_tag "samp5.jpg",width: "200"
             .otherA--body
@@ -198,7 +198,7 @@
                       = "0"
                 %p (税込)
         .other-item-list
-          %a.otherA{"data-method" => "GET",:href => item_path(@item)}
+          %a.otherA{method: "GET",href: item_path(@item)}
             %figure.otherA--img
               = image_tag "samp4.jpg",width: "200"
             .otherA--body
@@ -217,15 +217,13 @@
   .list-container
     %ul
       %li 
-        = link_to "FURIMA","#"
+        = link_to "FURIMA","/"
       %li 
-        = link_to "＞ スポーツ用品","#"
+        = link_to "＞ スポーツ用品","/"
       %li 
-        = link_to "＞ 野 球","#"
+        = link_to "＞ 野 球","/"
       %li 
-        = link_to "＞ バット","#"
-
-
+        = link_to "＞ バット","/"
 
 
 %aside.appBanner
@@ -235,9 +233,9 @@
     %p.inner__text
       今すぐ無料ダウンロード！
     .inner__icon
-      = link_to "#",class:"aBtn"
+      =link_to "/",class:"aBtn" do
         = image_tag "apps.png"
-      = link_to "#",class:"bBtn"
+      =link_to "/",class:"bBtn" do
         = image_tag "google-play.png"
 
 .top-footer
@@ -247,37 +245,37 @@
         FURIMAについて
       %ul
         %li
-          = link_to "会社概要（運営会社）","#"
+          = link_to "会社概要（運営会社）","/"
         %li
-          = link_to "プライバシーポリシー","#"
+          = link_to "プライバシーポリシー","/"
         %li
-          = link_to "FURIMA利用規約","#"
+          = link_to "FURIMA利用規約","/"
         %li
-          = link_to "ポイントに関する特約","#"
+          = link_to "ポイントに関する特約","/"
     %li.content
       %h2.content__head
         FURIMAを見る
       %ul
         %li
-          = link_to "カテゴリー一覧","#"
+          = link_to "カテゴリ一覧","/"
         %li
-        = link_to "ブランド一覧","#"
+          = link_to "ブランド一覧","/"
     %li.content
       %h2.content__head
         ヘルプ＆ガイド
       %ul
         %li
-          = link_to "FURIMAガイド","#"
+          = link_to "FURIMAガイド","/"
         %li
-          = link_to "FURIMAロゴ利用ガイドライン","#"
+          = link_to "FURIMAロゴ利用ガイドライン","/"
         %li
-          = link_to "お知らせ","#"
+          = link_to "お知らせ","/"
   .top-footer__logo
-    = link_to "/"
+    = link_to "/" do
       = image_tag "logo-white.png"
     %p ©︎ FURIMA
   .purchaseBtn
-    = link_to new_item_path"
+    %a{href: new_item_path}
       %span.purchaseBtn__text 出品する
       .purchaseBtn__icon
         = image_tag "icon_camera.png"
