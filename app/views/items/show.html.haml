@@ -119,7 +119,7 @@
 
     .other-item-content
       %h2.other-item-head
-        = link_to "●●さんのその他の出品","/"
+        = link_to "俺 さんのその他の出品","/",class: "item-head"
       .other-item-container
         .other-item-list
           %a.otherA{method: "GET",href: item_path(@item)}
@@ -167,7 +167,7 @@
 
     .other-item-content
       %h2.other-item-head
-        = link_to "スポーツ 野球 のその他の商品","/"
+        = link_to "スポーツ 野球 のその他の商品","/",class: "item-head"
       .other-item-container
         .other-item-list
           %a.otherA{method: "GET",href: item_path(@item)}
