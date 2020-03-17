@@ -1,0 +1,27 @@
+.top-header
+  .headerInner
+    .mainHeader
+      .header-image
+        = link_to "", new_user_path
+        = image_tag "logo.png"
+      .searchBox
+        .form
+          %input#searchInput.searchBox--input{name: "key", :placeholder => "キーワードから探す"}/
+          %button{type: "submit"}
+            .searchBox__icon
+              = image_tag "icon-search 1.png"
+    .nav
+      %ul.listLeft
+        %li.listLeft__item-first
+          = link_to "カテゴリー", root_path, class:"a"
+        %li.listLeft__item
+          = link_to "ブランド", root_path, class:"a"
+      %ul.listRight
+        %li.listRight__item-favorite
+          = link_to "いいね！一覧", root_path, class:"a"
+        %li.listRight__item-news
+          = link_to "お知らせ", root_path, class:"a"
+        %li.listRight__item-do
+          = link_to "やることリスト", root_path, class:"a"
+        %li.listRight__item-mypage
+          = link_to "マイページ", root_path, class:"a"
