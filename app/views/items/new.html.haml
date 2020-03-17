@@ -4,14 +4,15 @@
     = image_tag src="logo.png"
 
   .form__item
+  = form_with model: @form, local: true do |f|
     .form__item-image--body
       .form__item-image
         .form_label
           %label 出品画像
           %span 必須
         %P 最大10枚までアップロードできます
-        = form_with model: @form, local: true do |form|
-          %p= image_tag src="icon_camera.png"
+        .form__item-image--content
+          = image_tag src="icon_camera.png"
           .form_text
             %p
               ドラッグアンドドロップ 
@@ -23,15 +24,13 @@
         .form_label
           %label 商品名
           %span 必須
-        = form_with model: @form, local: true do |form|
-          = form.text_area :content, placeholder: "40文字まで"
+        = f.text_area :content, placeholder: "40文字まで"
 
       .form__item-discription
         .form_label
           %label 商品の説明
           %span 必須
-        = form_with model: @form, local: true do |form|
-          = form.text_area :content, placeholder: "商品の説明（必須1,000文字以内）&#13;&#10;（色、素材、材、重さ、定価、注意点など）&#13;&#10;&#13;&#10;例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。".html_safe 
+        = f.text_area :content, placeholder: "商品の説明（必須1,000文字以内）&#13;&#10;（色、素材、材、重さ、定価、注意点など）&#13;&#10;&#13;&#10;例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。".html_safe 
 
     .form__item-category--body
       %p 商品の詳細
@@ -39,24 +38,22 @@
         .form_label
           %label カテゴリー
           %span 必須
-        = form_with model: @form, local: true do |form|
-          = form.select :category_id, ["1"], prompt: "選択してください", class: "item_category"
-
-          -# = form.select :category_id, prompt: "選択してください"
-
+          .form__item-category--content
+          = f.select :category_id, ["1"], prompt: "選択してください", class: "item_category"
+     
       .form__item-brand
         .form_label
           %label ブランド
           %span 任意
-        = form_with model: @form, local: true do |form|
-          = form.text_area :content, placeholder: "例）シャネル"
+          .form__item-brand--content
+          = f.text_area :content, placeholder: "例）シャネル"
 
       .form__item-condition
         .form_label
           %label 商品の状態
           %span 必須
-        = form_with model: @form, local: true do |form|
-          = form.select :condition_id, ["1"], prompt: "選択してください", class: "item_condition"
+          .form__item-condition--content
+          = f.select :condition_id, ["1"], prompt: "選択してください", class: "item_condition"
 
     .form__item-shoppingPayer--body
       %p 配送について
@@ -64,22 +61,22 @@
         .form_label
           %label 配送料の負担
           %span 必須
-        = form_with model: @form, local: true do |form|
-          = form.select :shoppingPayer_id, ["1"], prompt: "選択してください", class: "item-shoppingPayer"
+          .form__item-shoppingPayer--content
+          = f.select :shoppingPayer_id, ["1"], prompt: "選択してください", class: "item-shoppingPayer"
 
       .form__item-fromArea
         .form_label
           %label 発送元の地域
           %span 必須
-        = form_with model: @form, local: true do |form|
-          = form.select :fromArea_id, ["1"], prompt: "選択してください", class: "item-fromArea"
+          .form__item-fromArea--content
+          = f.select :fromArea_id, ["1"], prompt: "選択してください", class: "item-fromArea"
 
       .form__item-duration
         .form_label
           %label 発送までの日数
           %span 必須
-        = form_with model: @form, local: true do |form|
-          = form.select :duration_id, ["1"], prompt: "選択してください", class: "item-duration"
+          .form__item-duration--content
+          = f.select :duration_id, ["1"], prompt: "選択してください", class: "item-duration"
 
     .form__item-price--body
       %p 価格（¥300〜9,999,999）
@@ -89,8 +86,7 @@
           %span 必須
         .form__item-price-select
           %span ¥
-          = form_with model: @form, local: true do |form|
-            = form.select :price, ["1"], prompt: "0", class: "item-price"
+          = f.select :price, ["1"], prompt: "0", class: "item-price"
 
       .form__item-fee
         .form__item-fee-label
@@ -104,8 +100,11 @@
           %span ー
           
       .form__item--submit
-        %button{:type => "submit"} 出品する
-        %a{:href => "/jp/"} もどる
+        = f.submit "出品する", class: "form__submit"
+
+      .form__item--link
+        = link_to "/items", class: "form__btn" do
+          もどる
 
       %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 
@@ -113,4 +112,5 @@
     %p プライバシーポリシー　メルカリ利用規約　特定商取引に関する表記
     = image_tag src="logo-white.png"
     %p © FURIMA, Inc.
+
 

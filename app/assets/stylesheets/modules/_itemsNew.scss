@@ -12,8 +12,6 @@
       width: 185px;
     }
   }
-  .form__item {
-  }
     .form__item-image--body {
       margin: auto;
       width: 700px;
@@ -25,7 +23,6 @@
         background-color: white;
         width: 620px;
         height: 255px;
-
         .form_label {
           width: 620px;
           height: 19px;
@@ -50,7 +47,9 @@
           margin-bottom: 16px;
           font-size: 14px;
         }
-        form {
+        .form__item-image--content {
+          padding-top: 40px;
+          text-align: center;
           background-color: #f5f5f5;
           border-width: 1px;
           border-style: dashed;
@@ -58,18 +57,11 @@
           width: 620px;
           height: 150px;
           border-color: rgb(204, 204, 204);
-          p {
-            position: relative;
+          img {
             text-align: center;
-            margin: auto;
-            padding-top: 40px;
-            img {
-              position: absolute;
-              text-align: center;
-              background-color: #f5f5f5;
-              width: 24px;
-              height: 24px;
-            }
+            background-color: #f5f5f5;
+            width: 24px;
+            height: 24px;
           }
           .form_text {
             text-align: center;
@@ -89,15 +81,14 @@
       .form__item-name {
         margin: auto;
         padding-top: 40px;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
         width: 620px;
         height: 83px;
 
         .form_label {
           width: 620px;
           height: 19px;
-          padding-top: 16px;
-          padding-bottom: 16px;
+          margin-bottom: 16px;
           label {
             font-size: 14px;
             font-weight: 600;
@@ -212,6 +203,9 @@
             height: 16px;
           }
         }
+        .form__item-category--content {
+          padding-bottom: 15px;
+        }
         select {
           border: 1px solid #ccc;
           border-radius: 4px;
@@ -226,6 +220,7 @@
         }
       }
       .form__item-brand {
+        padding-top: 60px;
         width: 620px;
         margin: auto;
         .form_label {
@@ -251,6 +246,9 @@
             height: 16px;
           }
         }
+        .form__item-brand--content {
+          padding-bottom: 15px;
+        }
         textarea {
           padding: 12px 16px;
           border: 1px solid #ccc;
@@ -266,6 +264,7 @@
         }
       }
       .form__item-condition {
+        padding-top: 60px;
         width: 620px;
         margin: auto;
         .form_label {
@@ -290,6 +289,9 @@
             width: 32px;
             height: 16px;
           }
+        }
+        .form__item-condition--content {
+          padding-bottom: 15px;
         }
         select {
           border: 1px solid #ccc;
@@ -323,6 +325,7 @@
         margin: auto;
         width: 620px;
         background-color: white;
+        padding-bottom: 60px;
         .form_label {
           width: 620px;
           height: 19px;
@@ -345,6 +348,9 @@
             width: 32px;
             height: 16px;
           }
+        }
+        .form__item-shoppingPayer--content {
+          padding-bottom: 15px;
         }
         select {
           border: 1px solid #ccc;
@@ -362,6 +368,7 @@
       .form__item-fromArea {
         margin: auto;
         width: 620px;
+        padding-bottom: 60px;
         .form_label {
           width: 620px;
           height: 19px;
@@ -384,6 +391,9 @@
             width: 32px;
             height: 16px;
           }
+        }
+        .form__item-fromArea--content {
+          padding-bottom: 15px;
         }
         select {
           border: 1px solid #ccc;
@@ -423,6 +433,9 @@
             width: 32px;
             height: 16px;
           }
+        }
+        .form__item-duration--content {
+          padding-bottom: 15px;
         }
         select {
           border: 1px solid #ccc;
@@ -545,18 +558,20 @@
       .form__item--submit {
         text-align: center;
         padding-bottom: 32px;
-        button {
+
+        .form__submit {
           background-color: #ea352d;
           color: #fff;
           cursor: pointer;
-          margin-bottom: 24px;
+          margin-bottom: 15px;
           font-size: 17px;
           min-height: 48px;
           padding: 0 24px;
           width: 360px;
           height: 48px;
         }
-        a {
+      }
+        .form__btn {
           display: flex;
           color: #0095ee;
           display: flex;
@@ -564,8 +579,8 @@
           height: 20px;
           justify-content: center;
           text-decoration: none;
+          padding-bottom: 30px;
         }
-      }
       p{
         font-size: 12px;
         line-height: 1.4em;
@@ -594,4 +609,5 @@
     }
   }
 }
+
 
