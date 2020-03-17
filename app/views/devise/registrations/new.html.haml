@@ -1,0 +1,136 @@
+.singie-container
+  .single-header
+    %h1
+      %a.signUp-thirdIcon{:href => "/"}
+        = image_tag "logo.png"
+    %nav.signUp-second-bar
+      %ol.signUp-second-clearfix
+        %li.signUp-second-active
+          %text 会員情報
+          .signUp-second-status
+        %li.signUp-second-active-sec
+          %text 発送元情報
+          .signUp-second-status-second
+        %li.signUp-second-active-third
+          %text 完了
+          .signUp-second-status-third
+%main.single-main
+  %section.single-main__first
+    %h2.head-title
+      会員情報入力
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .head-content
+        .head-contet-Item
+          %label ニックネーム
+          %span 必須
+        .field
+          -# = f.label :ニックネーム
+          -# %br/
+          = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+        .head-contet-Item
+          %label メールアドレス
+          %span 必須
+        .field
+          -# = f.label :email
+          -# %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+      .head-content-pass
+        .head-contet-pass-Item
+          %label パスワード
+          %span 必須
+        .field
+          -# = f.label :password
+          -# - if @minimum_password_length
+          -#   %em
+          -#     (#{@minimum_password_length} characters minimum)
+          -# %br/
+          = f.password_field :password, autocomplete: "new-password"
+        %p ※ 英字と数字の両方を含めて設定してください
+      .head-content-pass
+        .head-contet-pass-Item
+          %label パスワード(確認用)
+          %span 必須
+        .field
+          -# = f.label :encrypted_password
+          -# %br/
+          = f.password_field :encrypted_password, autocomplete: "new-password"
+        %p ※ 英字と数字の両方を含めて設定してください
+      %section.single-main__second
+        %h3 
+          本人確認
+          %p 
+            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+      %section.single-main__third
+        .head-contet-Item
+          %label お名前(全角)
+          %span 必須
+        .field
+          -# = f.label :family_name
+          -# %br/
+          = f.text_field :family_name, autofocus: true, autocomplete: "苗字"
+          -# = f.label :first_name
+          -# %br/
+          = f.text_field :first_name, autofocus: true, autocomplete: "first"
+        .head-contet-Item
+          %label お名前カナ(全角)
+          %span 必須
+        .field
+          -# = f.label :family_name_kana
+          -# %br/
+          = f.text_field :family_name_kana, autofocus: true, autocomplete: "苗字kana"
+          -# = f.label :first_name_kana
+          -# %br/
+          = f.text_field :first_name_kana, autofocus: true, autocomplete: "fir kana"
+      .head-content__birthday
+        .head-contet-Item
+          %label 生年月日
+          %span 必須
+        .field-birth
+          = f.text_field :birth_year, autocomplete: "birth_year"
+          = f.label :年
+          = f.text_field :birth_month, autocomplete: "birth_month"
+          = f.label :月
+          = f.text_field :birth_day, autocomplete: "birth_day"
+          = f.label :日
+      %p.text
+        ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+      %section.single-main__fourth
+        .TermsOfService
+          .Text
+            「次へ進む」のボタンを押すことにより、
+            = link_to root_path do  
+              = "本人確認"
+            に同意したものとみなします
+      %section.continue_btn 
+        .signUp-continue-btn__box
+          .signUp-continue-btns
+            = f.submit "次へ進む"
+      %p.TexT
+        = link_to root_path do  
+          = "本人情報の登録について" 
+      %section.form-group
+        .form-group-text
+          This site is protected by reCAPTCHA and the Google 
+          = link_to root_path do  
+            = "Privacy Policy"  
+          and
+          = link_to root_path do  
+            = "Terms of Service" 
+          apply
+%footer.single_footer
+  %nav
+    %ul
+      %li
+        = link_to root_path do  
+          = "プライバシーポリシー"  
+      %li
+        = link_to root_path do  
+          = "FURIMA利用規約"  
+      %li
+        = link_to root_path do  
+          = "特定商取引に関する表記"  
+    %a.logo-img
+      = image_tag "logo-white.png" 
+    %a.logo-text
+      %Small © Furima

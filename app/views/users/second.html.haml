@@ -1,0 +1,123 @@
+.singie-container
+  .single-header
+    %h1
+      %a.signUp-thirdIcon{:href => "/"}
+        = image_tag "logo.png"
+    %nav.signUp-second-bar
+      %ol.signUp-second-clearfix
+        %li.signUp-second-active
+          %text 会員情報
+          .signUp-second-status
+        %li.signUp-second-active-sec
+          %text 発送元情報
+          .signUp-second-status-second
+        %li.signUp-second-active-third
+          %text 完了
+          .signUp-second-status-third
+        
+%main.single-main
+  %section.single-main__first
+    %h2.head-title
+      会員情報入力
+    .head-content
+      .head-contet-Item
+        %label ニックネーム
+        %span 必須
+      = form_with(model: @user, method: :get, local: true) do |form|
+        = form.text_field :nickname, placeholder: "例）やまだ"
+      .head-contet-Item
+        %label メールアドレス
+        %span 必須
+      = form_with(model: @user, method: :get, local: true) do |form|
+        = form.text_field :email, placeholder: "PC・携帯どちらでも可"
+    .head-content-pass
+      .head-contet-pass-Item
+        %label パスワード
+        %span 必須
+      = form_with(model: @user, method: :get, local: true) do |form|
+        = form.text_field :encrypted_password, placeholder: "7文字以上の半角英数字", rows: "7"
+      %p ※ 英字と数字の両方を含めて設定してください
+    .head-content-pass
+      .head-contet-pass-Item
+        %label パスワード(確認用)
+        %span 必須
+      = form_with(model: @user, method: :get, local: true) do |form|
+        = form.text_field :encrypted_password, placeholder: "7文字以上の半角英数字", rows: "7"
+      %p ※ 英字と数字の両方を含めて設定してください
+    %section.single-main__second
+      %h3 
+        本人確認
+        %p 
+          安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+    %section.single-main__third
+      .head-contet-Item
+        %label お名前(全角)
+        %span 必須
+      = form_with(model: @user, method: :get, local: true) do |form|
+        = form.text_field :first_name, placeholder: "例）山田"
+        = form.text_field :family_name, placeholder: "例）太郎"
+      .head-contet-Item
+        %label お名前カナ(全角)
+        %span 必須
+      = form_with(model: @user, method: :get, local: true) do |form|
+        = form.text_field :first_name_kana, placeholder: "例）ヤマダ"
+        = form.text_field :family_name_kana, placeholder: "例）タロウ"
+    .head-content__birthday
+      .head-contet-Item
+        %label 生年月日
+        %span 必須
+      = form_with(model: @user, method: :get, local: true, class: "test-from11") do |form|
+        != sprintf(form.date_select(:birth_day, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+    %p.text
+      ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+    %section.single-main__fourth
+      .TermsOfService
+        .Text
+          「次へ進む」のボタンを押すことにより、
+          = link_to root_path do  
+            = "本人確認"
+          に同意したものとみなします
+    %section.continue_btn 
+      .signUp-continue-btn__box
+        .signUp-continue-btns
+          = form_with(url: third_signup_index_path, model: @user, method: :get, local: true) do |form|
+            = form.submit "次へ進む"
+    %p.TexT
+      = link_to root_path do  
+        = "本人情報の登録について" 
+    %section.form-group
+      .form-group-text
+        This site is protected by reCAPTCHA and the Google 
+        = link_to root_path do  
+          = "Privacy Policy"  
+        and
+        = link_to root_path do  
+          = "Terms of Service" 
+        apply
+%footer.single_footer
+  %nav
+    %ul
+      %li
+        = link_to root_path do  
+          = "プライバシーポリシー"  
+      %li
+        = link_to root_path do  
+          = "メルカリ利用規約"  
+      %li
+        = link_to root_path do  
+          = "特定商取引に関する表記"  
+    %a.logo-img
+      = image_tag "logo-white.png" 
+    %a.logo-text
+      %Small © Furima
+
+      t.string :dest_fas_name,      null: false
+      t.string :dest_fam_name,      null: false
+      t.string :dest_fas_name_kana, null: false
+      t.string :dest_fam_name_kana, null: false
+      t.integer :post_code, limit: 7,         null: false
+      t.integer :prefecture_code,   null: false
+      t.string :city,               null: false
+      t.string :house_number,       null: false
+      t.string :bilding_name
+      t.integer :phone_number,      unique: true

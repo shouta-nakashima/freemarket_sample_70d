@@ -1,71 +1,129 @@
 .singie-container{
   .single-header{
-    width: 100%;
-    height: 130px;
     background-color: #f5f5f5;
-    justify-content: center;
+    height: 128px;
     display: flex;
-    h1{
-      width: 200px;
-      height: 100px;
-      background-color: #f5f5f5;
-      margin: 0 0 0 auto;
-      padding-top: 30px;
-      a{
-        img{
-          width: 200px;
+    h1 {
+      margin: 40px 0 0 450px;
+      a {
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+        img {
+          width: 185px;
+          height: 49px;
         }
       }
     }
-    .progress-bar.singnup-bar{
-      margin: auto auto auto 40px;
-      .clearfix{
+    .signUp-second-bar {
+      padding: 35px 0 0 60px;
+      border: 0;
+      .signUp-second-clearfix {
         display: flex;
-        .active{
-          width: 80px;
-          height: 32px;
-          font-size: 12px;
-          font-weight: bold;
-          color: red;
-          margin: 0 40px 0 0;
-          .progress-status{
+        margin: 0;
+        .signUp-second-active {
+          font-weight: 600;
+          color: #ea352d;
+          text {
+            font-size: 12px;
+          }
+          .signUp-second-status {
+            background-color: #ea352d;
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background-color: red;
-            margin: 0 20px;
+            margin-left: 20px;
+            margin-top: 5px;
+            z-index: 2;
           }
-          .progress-status::after{
-            bottom: 5px;
-            z-index: -1;
-            height: 2px;
-            width: 100%;
-            color: dimgrey;
+          .signUp-second-status::after {
+            position: absolute;
+            z-index: 1;
+            display: block;
             content: '';
+            width: 60px;
+            height: 2px;
+            background: #ccc;
+            margin-top: 4px;
+            margin-left: 12px;
           }
         }
-        li{
-          width: 80px;
-          height: 32px;
-          font-size: 12px;
-          font-weight: bold;
+        .signUp-second-active-sec {
+          font-weight: 600;
           color: #ccc;
-          .progress-status{
+          text {
+            font-size: 12px;
+            padding-left: 60px;
+          }
+          .signUp-second-status-second {
+            font-weight: 600;
+            color: #ea352d;
+            text {
+              font-size: 12px;
+            }
+          }
+          .signUp-second-status-second {
+            background-color: #ccc;
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background-color: #ccc;
-            margin: 0 7px;
+            margin-left: 86px;
+            margin-top: 5px;
           }
-          .progress-status::before{
-            color: gray;
+          .signUp-second-status-second::before {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            content: '';
+            width: 60px;
+            height: 2px;
+            background: #ccc;
+            margin-top: 4px;
+            right: 610px;
+          }
+          .signUp-second-status-second::after {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            content: '';
+            width: 60px;
+            height: 2px;
+            background: #ccc;
+            margin-top: 4px;
+            margin-left:12px;
+          }
+        }
+        .signUp-second-active-third {
+          font-weight: 600;
+          color: #ccc;
+          text {
+            font-size: 12px;
+            padding-left: 85px;
+          }
+          .signUp-second-status-third {
+            background-color: #ccc;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 90px;
+            margin-top: 5px;
+          }
+          .signUp-second-status-third::after {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            content: '';
+            width: 60px;
+            height: 2px;
+            background: #ccc;
+            margin-top: 4px;
+            right: 479px;
           }
         }
       }
     }
   }
 }
-
 .single-main{
   background-color: #f5f5f5;
   display: flex;
@@ -119,7 +177,7 @@
       }
     }
     .head-content-pass{             //パスワード登録
-      padding: 1px 16px 24px 16px;
+      padding: 1px 16px 0px 16px;
       text-align: center;
       width: 700px;
       background-color: white;
@@ -244,6 +302,40 @@
           border-radius: 2px;
         }
       }
+      .field-birth {
+        width: 380px;
+        margin-left: 140px;
+        #user_birth_year {
+          margin-top: 10px;        
+          width: 55px;
+          height: 30px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          font-size: 16px;
+        }
+        #user_birth_month {
+          margin-top: 10px;        
+          width: 55px;
+          height: 30px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          font-size: 16px;
+        }
+        #user_birth_day {
+          margin-top: 10px;        
+          width: 55px;
+          height: 30px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          font-size: 16px;
+        }
+      }
       form{
         margin-top: 10px;
         padding-right: 82px;
@@ -275,17 +367,28 @@
         }
       }
     }
-    .continue_btn{
-      padding: 1px 165px 24px 165px;
-      width: 402px;
-      background-color: white;
+    .signUp-continue-btn {
+      width: 700px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px 32px 40px 32px;
       text-align: center;
-      input{
-        color: white;
-        background-color: red;
-        height: 55px;
-        width: 343px;
-        
+      &__box {
+        padding-right: 15px;
+        background-color: #fff;
+        .signUp-continue-btns {
+          width: 343px;
+          margin: auto;
+          input {
+            width: 100%;
+            height: 47px;
+            background-color: #ea352d;
+            color: white;
+            border-radius: 4px;
+            border-radius: 4px;
+          }
+          
+        }
       }
     }
     .TexT{
