@@ -1,1 +1,281 @@
-商品詳細ページ
+.wrapper
+  .top-header
+    .headerInner
+      .mainHeader
+        .header-image
+          = image_tag "logo.png"
+        .searchBox
+          .form
+            %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}
+            %button{type: "submit"}
+              .searchBox__icon
+                = image_tag "icon-search 1.png"
+      .nav
+        %ul.listLeft
+          %li.listLeft__item-first
+            =link_to "カテゴリー","/"
+          %li.listLeft__item
+            =link_to "ブランド","/"
+        %ul.listRight
+          %li.listRight__item-mypage
+            =link_to "マイページ","/"
+
+  .item-box
+    .item-name
+      俺のホームレンべェット草
+    .item-content
+      .item-photo
+        .photo-drag
+          .photo-outer
+          .photo-dots
+            .dots-A
+            .dots-B
+            .dots-C
+            .dots-D
+            .dots-E
+      %section.visible-sp
+        %table
+          %tr
+            %th 出  品  者
+            %td 俺
+          %tr
+            %th カテゴリー
+            %td スポーツ<br>野球<br>バット
+          %tr
+            %th ブランド
+            %td ノーブランド
+          %tr
+            %th 商品サイズ
+            %td なし
+          %tr
+            %th 商品状態
+            %td 中古
+          %tr
+            %th 配送料負担
+            %td 出品者負担
+          %tr
+            %th 配送方法
+            %td 楽ちんナカシマ便
+          %tr
+            %th 配送元地域
+            %td 東京都
+          %tr
+            %th 配送日の目安
+            %td 1日-2日
+    .item-middle-content
+      .item-price-box
+        %section.buy
+          %span.praice ¥13,000
+          %span.tax="(税込)"
+          %span.Postage 送料込み
+      .buybtn
+        =link_to "購入画面に進む","/"
+
+    .item-dicription-content
+      .item-description-inner
+        %p.description
+          サイズ：XS、 S、M、L、XL
+          【使用場面】結婚式、入学式、卒業式、2次会、謝恩会、会食、演奏会、女子会、パーティー、同窓会、食事会、成人式
+          おしゃれに振り切れるバットです。
+          落ち感のあるとろみ生地は体のラインを拾わず着痩せ効果あり！
+          くびれメイクデザインとスレンダーなラインでほっそり美しいドレス姿に◎
+          結婚式パーティーからデイリーまで様々なシーンに対応。
+          二次会 花嫁 ドレス レース 魅力 同窓会 フォーマル 卒業式 通勤 スカートスーツ 披露宴 卒業式 ブライズメイド  ワンピース 通勤 フォーマル オフィススカート スーツ 卒業式 ママ
+          サイズ（cm)
+          カラー：写真より（写真参考）
+          商品について：
+          ◆サイズ表記は目安です。若干の誤差(約1-3cm前後)がある場合がございます。
+          ◆製造中（縫製、染色など）により商品において色味や柄、サイズに若干の誤差や、生地を織る際に糸の継ぎ目や多少のほつれ等が生じる場合がございますが、品質上の問題ではございませんのでご了承の上お買い求めくださいませ。
+          ◆購入する前にメッセージを残してください
+          \#ドレス
+          \#年次総会
+          \#コンサート
+          \#パーティー
+          \#成人式
+          \#二次会
+          \#花嫁
+          \#结婚式
+    .message-content
+      .blank
+      .message-container
+        %p.attention 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分と<br>なることがあります。草
+      .text-box
+        %textarea{class: "textarea"}
+      .btn-box
+        %input{type:"submit", class:"comment-btn",value: "コメントする"}
+
+    .social-media-content
+      .social-media-box
+        .facebook-square
+          = link_to "http://www.facebook.com/share.php?u=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm82831756786%2F" do
+            = icon('fab', 'facebook-square fa-3x', class: 'facebook', style: "color: #3B5998")
+        .twitter-square
+          = link_to "http://www.facebook.com/share.php?u=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm82831756786%2F" do
+            = icon('fab', 'twitter-square fa-3x', class: 'twitter',style: "color: #55acee;")
+        .line-square
+          = link_to "http://www.facebook.com/share.php?u=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm82831756786%2F" do
+            = icon('fab', 'line fa-3x', class: 'line',style: "color: #00c300;")
+
+
+    .other-item-content
+      %h2.other-item-head
+        = link_to "●●さんのその他の出品","/"
+      .other-item-container
+        .other-item-list
+          %a.otherA{method: "GET",href: item_path(@item)}
+            %figure.otherA--img
+              = image_tag "samp3.jpg",width: "200"
+            .otherA--body
+              %h3.name
+                %a 俺のムレくっつ　草
+              .datails
+                %ul
+                  %li 2000円
+                  %li
+                    %i.fa.fa-star.likeIcon::before
+                      = "0"
+                %p (税込)
+        .other-item-list
+          %a.otherA{method: "GET",href: item_path(@item)}
+            %figure.otherA--img
+              = image_tag "samp5.jpg",width: "200"
+            .otherA--body
+              %h3.name
+                %a 勇者のキャップ　草
+              .datails
+                %ul
+                  %li 2000円
+                  %li
+                    %i.fa.fa-star.likeIcon::before
+                      = "0"
+                %p (税込)
+        .other-item-list
+          %a.otherA{method: "GET",href: item_path(@item)}
+            %figure.otherA--img
+              = image_tag "samp4.jpg",width: "200"
+            .otherA--body
+              %h3.name
+                %a ドンキで買ったやつ　草
+              .datails
+                %ul
+                  %li 2000円
+                  %li
+                    %i.fa.fa-star.likeIcon::before
+                      = "0"
+                %p (税込)
+
+
+    .other-item-content
+      %h2.other-item-head
+        = link_to "スポーツ 野球 のその他の商品","/"
+      .other-item-container
+        .other-item-list
+          %a.otherA{method: "GET",href: item_path(@item)}
+            %figure.otherA--img
+              = image_tag "samp3.jpg",width: "200"
+            .otherA--body
+              %h3.name
+                %a 俺のムレくっつ
+              .datails
+                %ul
+                  %li 2000円
+                  %li
+                    %i.fa.fa-star.likeIcon::before
+                      = "0"
+                %p (税込)
+        .other-item-list
+          %a.otherA{method: "GET",href: item_path(@item)}
+            %figure.otherA--img
+              = image_tag "samp5.jpg",width: "200"
+            .otherA--body
+              %h3.name
+                %a 俺のキャップ
+              .datails
+                %ul
+                  %li 2000円
+                  %li
+                    %i.fa.fa-star.likeIcon::before
+                      = "0"
+                %p (税込)
+        .other-item-list
+          %a.otherA{method: "GET",href: item_path(@item)}
+            %figure.otherA--img
+              = image_tag "samp4.jpg",width: "200"
+            .otherA--body
+              %h3.name
+                %a 俺のブルゾーン
+              .datails
+                %ul
+                  %li 2000円
+                  %li
+                    %i.fa.fa-star.likeIcon::before
+                      = "0"
+                %p (税込)
+
+
+.breadcrumb-box
+  .list-container
+    %ul
+      %li 
+        = link_to "FURIMA","/"
+      %li 
+        = link_to "＞ スポーツ用品","/"
+      %li 
+        = link_to "＞ 野 球","/"
+      %li 
+        = link_to "＞ バット","/"
+
+
+%aside.appBanner
+  .inner
+    %h2.inner__title
+      誰でも簡単、人生を変えるフリマアプリ
+    %p.inner__text
+      今すぐ無料ダウンロード！
+    .inner__icon
+      =link_to "/",class:"aBtn" do
+        = image_tag "apps.png"
+      =link_to "/",class:"bBtn" do
+        = image_tag "google-play.png"
+
+.top-footer
+  %ul.contents
+    %li.content
+      %h2.content__head
+        FURIMAについて
+      %ul
+        %li
+          = link_to "会社概要（運営会社）","/"
+        %li
+          = link_to "プライバシーポリシー","/"
+        %li
+          = link_to "FURIMA利用規約","/"
+        %li
+          = link_to "ポイントに関する特約","/"
+    %li.content
+      %h2.content__head
+        FURIMAを見る
+      %ul
+        %li
+          = link_to "カテゴリ一覧","/"
+        %li
+          = link_to "ブランド一覧","/"
+    %li.content
+      %h2.content__head
+        ヘルプ＆ガイド
+      %ul
+        %li
+          = link_to "FURIMAガイド","/"
+        %li
+          = link_to "FURIMAロゴ利用ガイドライン","/"
+        %li
+          = link_to "お知らせ","/"
+  .top-footer__logo
+    = link_to "/" do
+      = image_tag "logo-white.png"
+    %p ©︎ FURIMA
+  .purchaseBtn
+    %a{href: new_item_path}
+      %span.purchaseBtn__text 出品する
+      .purchaseBtn__icon
+        = image_tag "icon_camera.png"
