@@ -1,30 +1,4 @@
-.top-header
-  .headerInner
-    .mainHeader
-      .header-image
-        %a{:href => "/"}
-          = image_tag "logo.png"
-      .searchBox
-        .form
-          %input#searchInput.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
-          %button{:type => "submit"}
-            .searchBox__icon
-              = image_tag "icon-search 1.png"
-    .nav
-      %ul.listLeft
-        %li.listLeft__item-first
-          %a{:href => "#"} カテゴリー
-        %li.listLeft__item
-          %a{:href => "#"} ブランド
-      %ul.listRight
-        %li.listRight__item-favorite
-          %a{:href => "#"} いいね！一覧
-        %li.listRight__item-news
-          %a{:href => "#"} お知らせ
-        %li.listRight__item-do
-          %a{:href => "#"} やることリスト
-        %li.listRight__item-mypage
-          %a{:href => "#"} マイページ
+= render 'users/mypage-header'
 %body
   .wrapper
     .wrapper_main
@@ -101,46 +75,6 @@
             %p 電話番号の確認
             %i.fa.fa-angle-right
           %li.wrapper_main_side_menu_name
-            = link_to "ログアウト", cards_path, class:"log_out"
+            = link_to "ログアウト", new_user_path, class:"log_out"
             %i_2.fa.fa-angle-right
-.top-footer
-  %ul.contents
-    %li.content
-      %h2.content__head
-        FURIMAについて
-      %ul
-        %li
-          %a{:href => "#"} 会社概要（運営会社）
-        %li
-          %a{:href => "#"} プライバシーポリシー
-        %li
-          %a{:href => "#"} FURIMA利用規約
-        %li
-          %a{:href => "#"} ポイントに関する特約
-    %li.content
-      %h2.content__head
-        FURIMAを見る
-      %ul
-        %li
-          %a{:href => "#"} カテゴリー一覧
-        %li
-          %a{:href => "#"} ブランド一覧
-    %li.content
-      %h2.content__head
-        ヘルプ＆ガイド
-      %ul
-        %li
-          %a{:href => "#"} FURIMAガイド
-        %li
-          %a{:href => "#"} FURIMAロゴ利用ガイドライン
-        %li
-          %a{:href => "#"} お知らせ
-  .top-footer__logo
-    %a{:href => "/"}
-      = image_tag "logo-white.png"
-    %p ©︎ FURIMA
-  .purchaseBtn
-    %a{:href => "/"}
-      %span.purchaseBtn__text 出品する
-      .purchaseBtn__icon
-        = image_tag "icon_camera.png"
+= render 'home/home-footer'

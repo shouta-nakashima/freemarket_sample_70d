@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     
   end
 
-  def desroy
+  def desroy    
+    
   end
 
   def show
