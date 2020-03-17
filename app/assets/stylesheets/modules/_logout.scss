@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  position: relative;
+  .wrapper {
+    line-height: 10px;
+    height: 1260px;
+    width: 100%;
+    background-color: #EEEEEE;
+    &_main {
+      height: 1230px;
+      max-width: 1025px;
+      margin: 0 auto;
+      position: relative;
+      &_cover {
+        float: right;
+        width: 695px;
+        margin-right:10px;
+        height: 180px;
+        background-color: white;
+        margin-top: 30px;
+        &_header {
+          margin: auto;
+          width: 300px;
+          background-color: red;
+          height: 50px;
+          h1 {
+            line-height: 50px;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 60px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.top-header
+  .headerInner
+    .mainHeader
+      .header-image
+        %a{:href => "/"}
+          = image_tag "logo.png"
+      .searchBox
+        .form
+          %input#searchInput.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
+          %button{:type => "submit"}
+            .searchBox__icon
+              = image_tag "icon-search 1.png"
+    .nav
+      %ul.listLeft
+        %li.listLeft__item-first
+          %a{:href => "#"} カテゴリー
+        %li.listLeft__item
+          %a{:href => "#"} ブランド
+      %ul.listRight
+        %li.listRight__item-favorite
+          %a{:href => "#"} いいね！一覧
+        %li.listRight__item-news
+          %a{:href => "#"} お知らせ
+        %li.listRight__item-do
+          %a{:href => "#"} やることリスト
+        %li.listRight__item-mypage
+          %a{:href => "#"} マイページ
