@@ -12,6 +12,6 @@ class User < ApplicationRecord
 
   #associate
   has_one :card
-
+  has_many :items
 
 end

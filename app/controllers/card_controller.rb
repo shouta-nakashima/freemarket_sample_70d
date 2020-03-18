@@ -2,11 +2,17 @@ class CardController < ApplicationController
 
   require "payjp"
 
+
+  #usersテーブルでのidカラムの値が1のアカウントでログインしている場合、current_userはUser.find(1)と同じ意味
+  #current_user.usersテーブルのカラム名とすることで、ログイン中のユーザーの情報として登録されている各カラムの値を取得することができる。
+  #ヘルパーメソッドcurrent_userを利用して、ログインしているユーザーのデータ(id)を取得してuser_idとする
   def new
     card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
+  #if card.exists? カードテーブルにデータが存在するかどうかtrueならリダイレクト
 
+  
   def pay #payjpとCardのデータベース作成を実施します。
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
