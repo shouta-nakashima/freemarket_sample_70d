@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   def creat
   end
 
-  def desroy
+  def desroy    
+    
   end
 
   def show
