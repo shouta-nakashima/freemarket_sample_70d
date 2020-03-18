@@ -9,4 +9,9 @@ class User < ApplicationRecord
   validates :first_name, :family_name, presence: true, format: { with: /\A[ぁ-んァ-ヶー一-龠]+\z/i }
   validates :first_name_kana, :family_name_kana, presence: true, format: { with: /\A[ア-ン゛゜ァ-ォャ-ョー「」、]+\z/i }
 
+
+  #associate
+  has_one :card
+
+
 end
