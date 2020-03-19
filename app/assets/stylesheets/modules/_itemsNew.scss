@@ -48,25 +48,19 @@
           font-size: 14px;
         }
         .form__item-image--content {
-          padding-top: 40px;
-          text-align: center;
+          display: block;
+          display: flex;
+          flex-wrap: wrap;
           background-color: #f5f5f5;
           border-width: 1px;
           border-style: dashed;
-          margin: auto;
           width: 620px;
           height: 150px;
           border-color: rgb(204, 204, 204);
-          img {
-            text-align: center;
-            background-color: #f5f5f5;
-            width: 24px;
-            height: 24px;
-          }
-          .form_text {
-            text-align: center;
+          label {
+            display: flex;
             p {
-              font-size: 12px;
+              font-size: 20px;
             }
           }
         }
@@ -307,7 +301,7 @@
         }
       }
     }
-    .form__item-shoppingPayer--body {
+    .form__item-postage_payer--body {
       margin: auto;
       width: 700px;
       height: 444px;
@@ -321,7 +315,7 @@
         width: 620px;
         padding-left: 40px;
       }
-      .form__item-shoppingPayer {
+      .form__item-postage_payer {
         margin: auto;
         width: 620px;
         background-color: white;
@@ -349,7 +343,7 @@
             height: 16px;
           }
         }
-        .form__item-shoppingPayer--content {
+        .form__item-postage_payer--content {
           padding-bottom: 15px;
         }
         select {
@@ -365,7 +359,7 @@
           margin-bottom: 10px;
         }
       }
-      .form__item-fromArea {
+      .form__item-prefecture_code {
         margin: auto;
         width: 620px;
         padding-bottom: 60px;
@@ -392,7 +386,7 @@
             height: 16px;
           }
         }
-        .form__item-fromArea--content {
+        .form__item-prefecture_code--content {
           padding-bottom: 15px;
         }
         select {
@@ -408,7 +402,7 @@
           margin-bottom: 10px;
         }
       }
-      .form__item-duration {
+      .form__item-preparation_day {
         margin: auto;
         width: 620px;
         .form_label {
@@ -434,7 +428,7 @@
             height: 16px;
           }
         }
-        .form__item-duration--content {
+        .form__item-preparation_day--content {
           padding-bottom: 15px;
         }
         select {
@@ -504,8 +498,10 @@
             padding-right: 8px;
             padding-top: 13px;
           }
-          select {
-            direction: rtl;
+          textarea {
+            text-align: right;
+            padding-top: 15px;
+            padding-right: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
@@ -517,47 +513,49 @@
           }
         }
       }
-      .form__item-fee {
-        margin: auto;
-        width: 620px;
-        height: 45px;
-        padding: 12px 0px;
-        .form__item-fee-label {
-          display: flex;
-          justify-content: space-between;
-          label {
-            font-size: 14px;
-          }
-          span {
-            font-size: 14px;
-          }
-        }
-      }
-      .form__item-total {
-        margin: auto;
-        width: 620px;
-        height: 70px;
-        padding-bottom: 30px;
-          hr {
-            border-top-width: 1px;
-            color: #fff;
-            font: inherit;
-          }
-        .form__item-total-label {
-          padding-top: 15px;
-          display: flex;
-          justify-content: space-between;
-          label {
-            font-size: 14px;
-          }
-          span {
-            font-size: 14px;
-          }
-        }
-      }
+      // .form__item-fee {
+      //   margin: auto;
+      //   width: 620px;
+      //   height: 45px;
+      //   padding: 12px 0px;
+      //   .form__item-fee-label {
+      //     display: flex;
+      //     justify-content: space-between;
+      //     label {
+      //       font-size: 14px;
+      //     }
+      //     span {
+      //       font-size: 14px;
+      //     }
+      //   }
+      // }
+      // .form__item-total {
+      //   margin: auto;
+      //   width: 620px;
+      //   height: 70px;
+      //   padding-bottom: 30px;
+      //     hr {
+      //       border-top-width: 1px;
+      //       color: #fff;
+      //       font: inherit;
+      //     }
+      //   .form__item-total-label {
+      //     padding-top: 15px;
+      //     display: flex;
+      //     justify-content: space-between;
+      //     label {
+      //       font-size: 14px;
+      //     }
+      //     span {
+      //       font-size: 14px;
+      //     }
+      //   }
+      // }
       .form__item--submit {
         text-align: center;
         padding-bottom: 32px;
+        padding-top: 100px;
+        
 
         .form__submit {
           background-color: #ea352d;
@@ -582,6 +580,7 @@
           padding-bottom: 30px;
         }
       p{
+        padding-top: 30px;
         font-size: 12px;
         line-height: 1.4em;
       }
