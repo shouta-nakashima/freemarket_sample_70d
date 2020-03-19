@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create, :destroy, :show] do
     resources :cards, only: [:index, :new, :create, :destroy, :edit, :update]
   end
-  resources :items, only: [:new, :create, :destroy, :show, :edit, :update]
+  resources :items, only: [:index, :new, :create, :destroy, :show, :edit]
 end

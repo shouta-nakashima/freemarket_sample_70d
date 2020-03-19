@@ -94,3 +94,9 @@ gem "font-awesome-sass"
 gem "devise"
 
 gem 'pry-rails'
+
+gem 'active_hash'
+
+gem 'jp_prefecture'
+
+gem 'jquery-rails'
