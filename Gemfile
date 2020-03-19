@@ -100,3 +100,5 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 
 gem 'devise-i18n-views'
+
+gem 'jp_prefecture'
