@@ -50,10 +50,10 @@ belongs_to :buyer, class_name: "User"
 ## Destinationsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|first_name|string|null: false|
-|first_name_kana|string|null: false|
-|family_name|string|null: false|
-|family_name_kana|string|null: false|
+|d_first_name|string|null: false|
+|d_first_name_kana|string|null: false|
+|d_family_name|string|null: false|
+|d_family_name_kana|string|null: false|
 |post_code|integer(7)|null: false|
 |prefecture_code|integer|null: false|
 |city|string|null: false|
@@ -85,12 +85,6 @@ belongs_to :item
 |------|----|-------|
 |name|string|null: false|
 |ancestry|string|null: false|
-### Association
-has_many :items
-## Sizesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|size|string|null: false|
 ### Association
 has_many :items
 ## Brandsテーブル

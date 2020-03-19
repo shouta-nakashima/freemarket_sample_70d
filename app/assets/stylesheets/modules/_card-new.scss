@@ -1,0 +1,316 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  position: relative;
+  .whole {
+    line-height: 10px;
+    height: 1260px;
+    width: 100%;
+    background-color: #EEEEEE;
+    &_main {
+      height: 1230px;
+      max-width: 1025px;
+      margin: 0 auto;
+      position: relative;
+      &_over {
+        float: right;
+        width: 695px;
+        margin-right:10px;
+        height: 545px;
+        background-color: white;
+        margin-top: 30px;
+        &_header {
+          height: 30px;
+          border-bottom: #EEEEEE thin solid;
+          h1 {
+            font-weight: bold;
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+          }
+        }
+        &_content {
+          height: 480px;
+          width: 367px;
+          margin: auto;
+          position: relative;
+          &_box {
+            width: 350px;
+            height: 120px;
+            position: absolute;
+            top: 40px;
+            margin-left: 10px;
+            list-style: none;
+            position: relative;
+            &_a {
+              width: 200px;
+              height: 30px;
+              display: flex;
+              &_text {
+                font-size: 13px;
+                font-weight: bold;
+                line-height: 25px;
+              }
+              &_texts {
+                border-radius: 3px; 
+                font-size: 13px;
+                padding-left: 5px;
+                padding-top: 3px;
+                height: 20px;
+                color: white;
+                width: 32px;
+                line-height: 16px;
+                margin-left: 10px;
+                background-color: red;
+                }
+            }
+            .form-card {
+              padding-left: 5px;
+              font-size: 13px;
+              width: 340px;
+              height: 40px;
+              }
+            img {
+              height: 22px;
+              width: 32px;
+              margin-top: 10px;
+            }
+          }
+          &_package {
+            margin-top: 50px;
+            padding-left: 13px;
+            height: 80px;
+            &_a {
+              font-size: 13px;
+              line-height: 30px;
+              width: 200px;
+              height: 30px;
+              display: flex;
+              &_text {
+                font-weight: bold;
+              }
+              &_texts {
+                color: white;
+                padding-left: 5px;
+                margin-top: 3px;
+                line-height: 21px;
+                height: 22px;
+                border-radius: 3px; 
+                background-color: red;
+                margin-left: 10px;
+                width: 32px;
+              }
+            }
+            &_b {
+              height: 40px;
+              width: 330px;
+              padding-left: 3px;
+              display: flex;
+              .form-month {
+                height: 35px;
+                width: 120px;
+              }
+              div {
+                line-height: 43px;
+                margin-left: 10px;
+                font-size: 14px;
+              }
+              .form-year {
+                width: 120px;
+                margin-left: 10px;
+                height: 35px;
+              }
+            }
+          }
+          &_input {
+            margin-left: 12px;
+            height: 110px;
+            width: 350px;
+            margin-top: 20px;
+            &_a {
+              width: 200px;
+              height: 30px;
+              display: flex;
+            &_text {
+              list-style: none;
+              font-weight: bold;
+              font-size: 13px;
+              line-height: 30px;
+            }
+            &_texts {
+              margin-left: 8px;
+              padding-left: 5px;
+              margin-top: 3px;
+              border-radius: 3px;
+              background-color: red;
+              color: white;
+              list-style: none;
+              font-size: 13px;
+              line-height: 22px;
+              height: 22px;
+              width: 32px;
+            }
+           }
+            &_b {
+              list-style: none;
+              width: 350px;
+              height: 45px;
+              .form-num {
+              font-size: 13px;
+                padding-left: 5px;
+              width: 340px;
+              height: 40px;
+              }
+            }
+            &_c {
+              list-style: none;
+              height: 40px;
+              width: 350px;
+              display: flex;
+              color: #0099e8;
+             
+              .fa {
+                margin-left: 190px;
+                line-height: 35px;
+              }
+              p {
+                line-height: 33px;
+                font-size: 13px;
+              }
+            }
+          }
+          &_case {
+            margin-left: 18px;
+            margin-top: 20px;
+            background-color: red;
+            width: 340px;
+            height: 50px;
+            .decide {
+              text-decoration: none;
+              color: white;
+              margin-left: 135px;
+              line-height: 50px;
+              font-size: 15px;
+            }
+          }
+      }
+        &_footer {
+          height: 128px;
+          width: 695px;
+          &_content {
+            margin-top: 50px;
+            margin-right: 30px;
+            float: right;
+            height: 40px;
+            width: 200px;
+            display: flex;
+            li {
+              margin-left: 30px;
+              color: #0099e8;
+              list-style: none;
+              font-size: 14px;
+              margin-top: 10px;
+              }
+              i {
+              float: right;
+              font-size: 20px;
+              color: #0099e8;
+              margin-top: 5px;
+              margin-left: 5px;
+              }
+          }
+        }
+      }
+      &_side {
+        width: 280px;
+        height: 1193px;
+        background-color: white;
+        position: absolute;
+        margin-top: 30px;
+        &_menu {
+          margin: 0; 
+          padding: 0; 
+          list-style: none; 
+          &_name {
+            border-bottom: #EEEEEE thin solid;
+            display: block; 
+            padding: 5px 10px ;
+            text-decoration: none;
+            color: #333;
+            width: 260px; 
+            margin: 0px;
+            text-align: left; 
+            font-size: 14px;
+            height: 35px;
+            position: relative;
+            .pay_mean {
+              padding-top: 17px;
+              padding-right: 190px;
+              padding-bottom: 16px;
+              font-size: 100px;
+              color: #333;
+              line-height: 37px;
+              font-size: 14px;
+              text-decoration: none;
+            }
+            .log_out {
+              padding-top: 17px;
+              padding-right: 190px;
+              padding-bottom: 16px;
+              font-size: 100px;
+              color: #333;
+              line-height: 37px;
+              font-size: 14px;
+              text-decoration: none;
+             }
+            &:hover {
+              background-color: #DDDDDD;
+              .fa-angle-right {
+                -webkit-transform: translate(4px);
+                transform: translate(4px);
+                color: #333;
+              }
+            }
+            .fa {
+              margin-left: 240px;
+              font-size: 25px;
+              color: #ccc;
+              position: absolute;
+              top: 10px;
+             }
+             p {
+               margin-top: 15px;
+             }
+             i_1 {
+               right: 17px;
+             }
+             i_2 {
+              right: 17px;
+            }
+          &_title {
+            background-color: #EEEEEE;
+            height: 30px;
+            padding-top: 45px;
+            h1 {
+              height: 30px;
+              margin-top: 0px;
+              font-size: 1em;
+              color: black;
+              }
+          &_a {
+            background-color:#EEEEEE;
+            padding-top: 30px;
+            height: 30px;
+            h2 {
+              font-size: 1em;
+              color: black;
+             }
+            }
+           } 
+         }
+       }
+      }
+     }
+    }
+   }

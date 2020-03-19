@@ -2,6 +2,19 @@
 %body
   .wrapper
     .wrapper_main
+      %nav.wrapper_main_block
+        .wrapper_main_block_header
+          %h1 支払い方法
+        .wrapper_main_block_content
+          %ul.wrapper_main_block_content_box
+            %div クレジットカード一覧
+            %li 
+              %i.fa.fa-credit-card
+              = link_to "クレジットカードを追加する", new_card_path, class:"addition"
+        .wrapper_main_block_footer
+          .wrapper_main_block_footer_content
+            %li 支払い方法について
+            %i.fa.fa-angle-right
       %nav.wrapper_main_side
         %ul.wrapper_main_side_menu
           %li.wrapper_main_side_menu_name

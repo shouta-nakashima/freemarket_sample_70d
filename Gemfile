@@ -100,3 +100,10 @@ gem 'active_hash'
 gem 'jp_prefecture'
 
 gem 'jquery-rails'
+
+gem 'rails-i18n'
+
+gem 'devise-i18n'
+
+gem 'devise-i18n-views'
+
