@@ -122,6 +122,27 @@
     }
   }
   &__main {
+    #error_explanation {
+      h2 {
+        background-color: #fff;
+        font-size: 18px;
+        color: red;
+        padding-top: 10px;
+        width: 764px;
+        margin: auto;
+        text-align: center;
+      }
+      ul {
+        background-color: #fff;
+        color: red;
+        width: 764px;
+        margin: auto;
+        text-align: center;
+        li {
+          padding-bottom: 3px;
+        }
+      }
+    }
     .signUp-third-text {
       width: 700px;
       margin: auto;
@@ -157,14 +178,14 @@
           }
         }
       }
-      form {
+      .signUp-third-name__form {
         padding-top: 10px;
         max-width: 343px;
         display: flex;
         padding-left: 180px;
         border-radius: 4px;
         padding-bottom: 30px;
-        #user_dest_fas_name {
+        #destination_d_family_name {
           height: 45px;
           text-decoration: none;
           margin-right: 10px;
@@ -173,7 +194,7 @@
           border: 1px solid #ccc;
           width: 165px;
         }
-        #user_dest_fam_name {
+        #destination_d_first_name {
           height: 45px;
           text-decoration: none;
           margin-right: 10px;
@@ -183,14 +204,14 @@
           width: 165px;
         }
       }
-      form {
+      .signUp-third-name__form {
         padding-top: 10px;
         max-width: 343px;
         display: flex;
         padding-left: 170px;
         border-radius: 4px;
         padding-bottom: 30px;
-        #user_dest_fas_name_kana {
+        #destination_d_family_name_kana {
           height: 45px;
           text-decoration: none;
           margin-right: 10px;
@@ -199,7 +220,7 @@
           border: 1px solid #ccc;
           width: 165px;
         }
-        #user_dest_fam_name_kana {
+        #destination_d_first_name_kana {
           height: 45px;
           text-decoration: none;
           border-radius: 3px;
@@ -235,14 +256,14 @@
           }
         }
       }
-      form {
+      .signUp-third-name__form {
         padding-top: 10px;
         max-width: 343px;
         display: flex;
         padding-left: 170px;
         border-radius: 4px;
         padding-bottom: 30px;
-        #user_post_code {
+        #destination_post_code {
           height: 45px;
           text-decoration: none;
           border-radius: 3px;
@@ -278,14 +299,14 @@
           }
         }
       }
-      form {
+      .signUp-third-name__form {
         padding-top: 10px;
         max-width: 343px;
         display: flex;
         padding-left: 170px;
         border-radius: 4px;
         padding-bottom: 30px;
-        #user_prefucture_code {
+        #destination_prefecture_code {
           height: 45px;
           text-decoration: none;
           border-radius: 3px;
@@ -322,14 +343,14 @@
           }
         }
       }
-      form {
+      .signUp-third-name__form {
         padding-top: 10px;
         max-width: 343px;
         display: flex;
         padding-left: 170px;
         border-radius: 4px;
         padding-bottom: 30px;
-        #user_city {
+        #destination_city {
           height: 45px;
           text-decoration: none;
           border-radius: 3px;
@@ -366,14 +387,14 @@
           }
         }
       }
-      form {
+      .signUp-third-name__form {
         padding-top: 10px;
         max-width: 343px;
         display: flex;
         padding-left: 170px;
         border-radius: 4px;
         padding-bottom: 30px;
-        #user_house_number {
+        #destination_house_number {
           height: 45px;
           text-decoration: none;
           border-radius: 3px;
@@ -411,14 +432,14 @@
           }
         }
       }
-      form {
+      .signUp-third-name__form {
         padding-top: 10px;
         max-width: 343px;
         display: flex;
         padding-left: 170px;
         border-radius: 4px;
         padding-bottom: 30px;
-        #user_bilding_name {
+        #destination_bilding_name {
           height: 45px;
           text-decoration: none;
           border-radius: 3px;
@@ -456,14 +477,14 @@
           }
         }
       }
-      form {
+      .signUp-third-name__form {
         padding-top: 10px;
         max-width: 343px;
         display: flex;
         padding-left: 170px;
         border-radius: 4px;
         padding-bottom: 30px;
-        #user_phone_number {
+        #destination_phone_number {
           height: 45px;
           text-decoration: none;
           border-radius: 3px;
@@ -485,15 +506,13 @@
         .signUp-third-btns {
           width: 343px;
           margin: auto;
-          form {
+          border-radius: 4px;
+          input {
+            width: 100%;
+            height: 47px;
+            background-color: #3ccace;
+            color: white;
             border-radius: 4px;
-            input {
-              width: 100%;
-              height: 47px;
-              background-color: #ea352d;
-              color: white;
-              border-radius: 4px;
-            }
           }
         }
       }

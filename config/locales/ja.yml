@@ -1,8 +1,8 @@
 ja:
   activerecord:
     models: 
-      user: ユーザー
-      destination: 発送元住所
+      user: 会員情報
+      destination: 発送元情報
       errors:
         messages:
           already_confirmed: は既に登録済みです。ログインしてください。
@@ -15,26 +15,26 @@ ja:
             other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
     attributes:
       user:
-        nickname: ニックネーム
-        email: メールアドレス
-        password: パスワード
-        first_name: 苗字
-        first_name_kana: 苗字（カナ）
-        family_name: 名前
-        family_name_kana: 名前（カナ）
-        birth_year: 生年月日（年）
-        birth_month: 生年月日（月）
-        birth_day: 生年月日（日）
+        nickname: ＊ニックネーム
+        email: ＊メールアドレス
+        password: ＊パスワード
+        first_name: ＊苗字
+        first_name_kana: ＊苗字（カナ）
+        family_name: ＊名前
+        family_name_kana: ＊名前（カナ）
+        birth_year: ＊生年月日（年）
+        birth_month: ＊生年月日（月）
+        birth_day: ＊生年月日（日）
       destination:
-        d_first_name: 苗字
-        d_family_name: 名前
-        d_first_name_kana: 苗字（カナ）
-        d_family_name_kana: 名前（カナ）
-        post_code: 郵便番号
-        prefecture_code: 都道府県
-        city: 市区町村
-        house_number: 番地
-        phone_number: 電話番号
+        d_first_name: ＊苗字
+        d_family_name: ＊名前
+        d_first_name_kana: ＊苗字（カナ）
+        d_family_name_kana: ＊名前（カナ）
+        post_code: ＊郵便番号
+        prefecture_code: ＊都道府県
+        city: ＊市区町村
+        house_number: ＊番地
+        phone_number: ＊電話番号
       
 
           

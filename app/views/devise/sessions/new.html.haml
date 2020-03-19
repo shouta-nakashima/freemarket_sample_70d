@@ -1,17 +1,50 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.signUp-top
+  %header.signUp-top__header
+    %h1
+      %a.signUp-topIcon{:href => "/"}
+        = image_tag "logo.png"
+  %main.signUp-top__main
+    %section.signUp-top__main__content
+      %h2.signUp-text
+        ログインページ
+      .signUp-forms
+        .signUp-form-fb
+          %button{:type => "submit"}
+            .searchBox__icon
+              = image_tag "icons10.png"
+            = link_to root_path do
+              = "FaceBookでログインする"
+        .signUp-form-google
+          %button{:type => "submit"}
+            .searchBox__icon
+              = image_tag "icons9.png"
+            = link_to root_path do
+              = "Googleでログインする"
+      .login-form-email
+        .loginBox__icon
+          = image_tag "icons8.png"
+          %p メールアドレスでログインする
+      .login-forms
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field-email
+            = f.email_field :email, autofocus: true, placeholder: ' メールアドレスを入力'
+          .field-password
+            = f.password_field :password, placeholder: ' パスワードを入力'
+          .actions-login
+            = f.submit "ログインする"
+  %footer.signUp-topFooter
+    %nav
+      %ul
+        %li
+          = link_to root_path do  
+            = "プライバシーポリシー"  
+        %li
+          = link_to root_path do  
+            = "メルカリ利用規約"  
+        %li
+          = link_to root_path do  
+            = "特定商取引に関する表記"  
+      %a.logo-img
+        = image_tag "logo-white.png" 
+      %a.logo-text
+        %Small © Furima
