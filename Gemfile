@@ -110,3 +110,4 @@ gem 'devise-i18n-views'
 gem 'hirb'
 
 gem 'hirb-unicode'
+
