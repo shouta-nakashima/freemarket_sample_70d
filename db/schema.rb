@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_03_19_080800) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -19,6 +20,9 @@ ActiveRecord::Schema.define(version: 2020_03_19_080800) do
     t.string "ancestry"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
+
+ActiveRecord::Schema.define(version: 2020_03_18_080904) do
+
 
   create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "d_first_name", null: false
@@ -30,27 +34,34 @@ ActiveRecord::Schema.define(version: 2020_03_19_080800) do
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "bilding_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_destinations_on_user_id"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "src"
+    t.string "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "introduction", null: false
-    t.integer "price", null: false
-    t.integer "prefecture_code", null: false
-    t.string "item_images_id", null: false
-    t.string "category_id", null: false
-    t.string "brand_id"
-    t.string "item_condition_id", null: false
+    t.string "item_images_id"
+    t.string "name"
+    t.text "introduction"
+    t.string "category_id"
+    t.string "brand"
+    t.string "item_condition_id"
+    t.string "postage_payer_id"
+    t.integer "prefecture_code"
     t.string "preparation_day_id"
-    t.string "postage_payer_id", null: false
-    t.string "size_id", null: false
-    t.string "seller_id", null: false
+    t.integer "price"
+    t.string "seller_id"
     t.string "buyer_id"
+    t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

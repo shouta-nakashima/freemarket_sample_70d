@@ -2,19 +2,19 @@
 
 Item.create!(
   id: 1,
-  name: 'Tシャツ',
-  introduction:'これはTシャツです',
-  price:1000,
-  prefecture_code: 1,
   item_images_id: 1,
+  name: '勇者のTシャツ',
+  introduction:'これは綿のTシャツです',
   category_id: 1,
-  brand_id: 1,
+  brand: 'ノーブランド',
   item_condition_id:1,
-  preparation_day_id: 1,
   postage_payer_id: 1,
-  size_id: 1,
+  prefecture_code: 1,
+  preparation_day_id: 1,
+  price:3980,
   seller_id: 1,
   buyer_id: 1,
+
   )
 
 # レディース
@@ -345,3 +345,5 @@ others_8 = others.children.create(name: "事務/店舗用品")
 others_8.children.create([{name: "オフィス用品一般"},{name: "オフィス家具"},{name: "店舗用品"},{name: "OA機器"},{name: "ラッピング/包装"},{name: "その他"}])
 others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
+
+
