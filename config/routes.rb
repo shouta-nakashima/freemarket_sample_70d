@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     post 'destinations', to: 'users/registrations#create_destination'
   end
   root to: "home#index"
+  resources :home, only: [:index, :new]
   resources :users, only: [:index, :new, :create, :destroy, :show] do
     resources:cards, only: [:index, :new, :create, :destroy, :edit, :update]
   end
-
 
 
   resources :items, only: [:new, :create, :destroy, :show, :edit, :update]
