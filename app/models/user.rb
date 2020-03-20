@@ -13,6 +13,6 @@ class User < ApplicationRecord
   validates :birth_year, length: { minimum: 4 }, format: { with: /\A[0-9]+\z/},inclusion: {in: 1910..2030}
   validates :birth_month, format: { with: /\A[0-9]+\z/},inclusion: {in: 1..12}
   validates :birth_day, format: { with: /\A[0-9]+\z/},inclusion: {in: 1..31}
-  has_many :items
+  has_many :items, dependent: :destroy
   has_one :destination
 end

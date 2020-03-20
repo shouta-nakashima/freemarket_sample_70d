@@ -11,15 +11,18 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 2020_03_18_080904) do
+ActiveRecord::Schema.define(version: 2020_03_19_080800) do
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "src"
-    t.string "item_id"
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
 
-ActiveRecord::Schema.define(version: 2020_03_17_103746) do
+ActiveRecord::Schema.define(version: 2020_03_18_080904) do
+
 
   create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "d_first_name", null: false
@@ -36,21 +39,28 @@ ActiveRecord::Schema.define(version: 2020_03_17_103746) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_destinations_on_user_id"
+  end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "src"
+    t.string "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "item_images_id"
     t.string "name"
     t.text "introduction"
-    t.integer "price"
-    t.integer "prefecture_code"
-    t.string "item_images_id"
     t.string "category_id"
-    t.string "brand_id"
+    t.string "brand"
     t.string "item_condition_id"
-    t.string "preparation_day_id"
     t.string "postage_payer_id"
-    t.string "size_id"
+    t.integer "prefecture_code"
+    t.string "preparation_day_id"
+    t.integer "price"
+    t.string "seller_id"
+    t.string "buyer_id"
     t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
