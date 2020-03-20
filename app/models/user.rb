@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include JpPrefecture
+  jp_prefecture :prefecture_code
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,5 +13,6 @@ class User < ApplicationRecord
   validates :birth_year, length: { minimum: 4 }, format: { with: /\A[0-9]+\z/},inclusion: {in: 1910..2030}
   validates :birth_month, format: { with: /\A[0-9]+\z/},inclusion: {in: 1..12}
   validates :birth_day, format: { with: /\A[0-9]+\z/},inclusion: {in: 1..31}
+  has_many :items
   has_one :destination
 end

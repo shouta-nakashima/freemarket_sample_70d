@@ -1,46 +1,108 @@
-%h2 住所情報登録
-= form_for @destination do |f|
-  = render "devise/shared/error_messages", resource: @destination
-  .field
-    = f.label :苗字
-    %br/
-    = f.text_field :d_first_name
-  .field
-    = f.label :d_family_name
-    %br/
-    = f.text_field :d_family_name
-  .field
-    = f.label :d_first_name_kana
-    %br/
-    = f.text_field :d_first_name_kana
-  .field
-    = f.label :d_family_name_kana
-    %br/
-    = f.text_field :d_family_name_kana
-  .field
-    = f.label :post_code
-    %br/
-    = f.text_field :post_code
-  .field
-    = f.label :prefecture_code
-    %br/
-    = f.text_field :prefecture_code
-  .field
-    = f.label :city
-    %br/
-    = f.text_field :city
-  .field
-    = f.label :house_number
-    %br/
-    = f.text_field :house_number
-  .field
-    = f.label :bilding_name
-    %br/
-    = f.text_field :bilding_name
-  .field
-    = f.label :phone_number
-    %br/
-    = f.text_field :phone_number
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.signUp-third
+  %header.signUp-third__header
+    %h1
+      %a.signUp-thirdIcon{:href => "/"}
+        = image_tag "logo.png"
+    %nav.signUp-third-bar
+      %ol.signUp-third-clearfix
+        %li.signUp-third-active
+          %text 会員情報
+          .signUp-third-status
+        %li.signUp-third-active-sec
+          %text 発送元情報
+          .signUp-third-status-second
+        %li.signUp-third-active-third
+          %text 完了
+          .signUp-third-status-third
+  %main.signUp-third__main
+    = form_for @destination do |f|
+      = render "devise/shared/error_messages", resource: @destination
+      %section.signUp-third-text
+        %text 発送元・お届け先情報
+      %section.signUp-third-name
+        .signUp-third-name__box
+          .signUp-third-name__box__text
+            %text お名前
+            .name-box
+              必須
+        .signUp-third-name__form
+          = f.text_field :d_family_name, placeholder: ' 例：山田'
+          = f.text_field :d_first_name, placeholder: ' 例：五郎'
+        .signUp-third-name__box
+          .signUp-third-name__box__text
+            %text お名前 カナ
+            .name-box
+              必須
+        .signUp-third-name__form
+          = f.text_field :d_family_name_kana, placeholder: ' 例：ヤマダ'
+          = f.text_field :d_first_name_kana, placeholder: ' 例：ゴロウ'
+      %section.signUp-third-post_code
+        .signUp-third-name__box
+          .signUp-third-name__box__text
+            %text 郵便番号
+            .name-box
+              必須
+        .signUp-third-name__form
+          = f.text_field :post_code, placeholder: ' 例：8121234'
+      %section.signUp-third-prefucture
+        .signUp-third-name__box
+          .signUp-third-name__box__text
+            %text 都道府県
+            .name-box
+              必須
+        .signUp-third-name__form
+          = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name
+      %section.signUp-third-city
+        .signUp-third-name__box
+          .signUp-third-name__box__text
+            %text 市区町村
+            .name-box
+              必須
+        .signUp-third-name__form
+          = f.text_field :city, placeholder: ' 例：博多区'
+      %section.signUp-third-house
+        .signUp-third-name__box
+          .signUp-third-name__box__text
+            %text 番地
+            .name-box
+              必須
+        .signUp-third-name__form
+          = f.text_field :house_number, placeholder: ' 例：唐人町1-1'
+      %section.signUp-third-building
+        .signUp-third-building__box
+          .signUp-third-building__box__text
+            %text 建物名
+            .name-boxs
+              任意
+        .signUp-third-name__form
+          = f.text_field :bilding_name, placeholder: ' 例：緑ビル103号'
+      %section.signUp-third-phone
+        .signUp-third-phone__box
+          .signUp-third-phone__box__text
+            %text 電話番号
+            .name-boxs
+              任意
+        .signUp-third-name__form
+          = f.text_field :phone_number, placeholder: ' 例：09012345678'
+      %section.signUp-third-btn
+        .signUp-third-btn__box
+          .signUp-third-btns
+            = f.submit "登録する"
+  %footer.signUp-thirdFooter
+    %nav
+      %ul
+        %li
+          = link_to root_path do  
+            = "プライバシーポリシー"  
+        %li
+          = link_to root_path do  
+            = "メルカリ利用規約"  
+        %li
+          = link_to root_path do  
+            = "特定商取引に関する表記"  
+      %a.logo-img
+        = image_tag "logo-white.png" 
+      %a.logo-text
+        %Small © Furima
+
+            
