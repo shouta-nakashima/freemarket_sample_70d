@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :first_name_kana, :family_name_kana, presence: true, format: { with: /\A[ア-ン゛゜ァ-ォャ-ョー「」、]+\z/i }
 
 
-  has_many :items
+  has_many :items, dependent: :destroy
 
   validates :birth_year, length: { minimum: 4 }, format: { with: /\A[+-]?\d+\z/},inclusion: {in: 1910..2030}
   validates :birth_month, format: { with: /\A[+-]?\d+\z/},inclusion: {in: 1..12}
