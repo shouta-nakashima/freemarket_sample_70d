@@ -14,6 +14,7 @@ Item.create!(
   price:3980,
   seller_id: 1,
   buyer_id: 1,
+<<<<<<< HEAD
 
   )
 
@@ -347,3 +348,6 @@ others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
 
 
+=======
+  )
+>>>>>>> parent of 8defa05... home_ancestry_commit

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   root to: "home#index"
+<<<<<<< HEAD
 
   resources :home, only: [:index, :new]
 
@@ -17,4 +18,13 @@ Rails.application.routes.draw do
   resources:cards, only: [:index, :new, :create, :destroy, :edit, :update]
 
 
+=======
+  resources :users, only: [:index, :new, :create, :destroy, :show] do
+    resources:cards, only: [:index, :new, :create, :destroy, :edit, :update]
+  end
+
+
+
+  resources :items, only: [:new, :create, :destroy, :show, :edit, :update]
+>>>>>>> parent of 8defa05... home_ancestry_commit
 end

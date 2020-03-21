@@ -11,16 +11,8 @@
               = image_tag "icon-search 1.png"
     .nav
       %ul.listLeft
-        %ul.left__items
-          %li.left__item
-            = link_to url="#", calss: "root_category"do
-              カテゴリー
-            %ul.left__item--left
-              - @parents.each do |parent|
-                %li.left__item--left__items
-                  = link_to "#{parent.name}", url="#",class: "parent_category",id: "#{parent.id}"
-            %ul.left__item--left__children
-            %ul.left__item--left__grand__children
+        %li.listLeft__item-first
+          %a{:href => "#"} カテゴリー
         %li.listLeft__item
           %a{:href => "#"} ブランド
       %ul.listRight
