@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-
-ActiveRecord::Schema.define(version: 2020_03_19_080800) do
+ActiveRecord::Schema.define(version: 2020_03_22_055521) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -21,12 +19,6 @@ ActiveRecord::Schema.define(version: 2020_03_19_080800) do
     t.string "ancestry"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
-=======
-ActiveRecord::Schema.define(version: 2020_03_17_103746) do
->>>>>>> parent of 8defa05... home_ancestry_commit
-
-ActiveRecord::Schema.define(version: 2020_03_18_080904) do
-
 
   create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "d_first_name", null: false

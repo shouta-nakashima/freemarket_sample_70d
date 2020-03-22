@@ -105,13 +105,10 @@ gem 'rails-i18n'
 
 gem 'devise-i18n'
 
-<<<<<<< HEAD
 gem 'devise-i18n-views'
 
 gem 'hirb'
 
 gem 'hirb-unicode'
 
-=======
-gem 'devise-i18n-views'
->>>>>>> parent of 8defa05... home_ancestry_commit
+gem 'rails-ujs'
