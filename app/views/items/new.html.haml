@@ -39,7 +39,8 @@
           %label カテゴリー
           %span 必須
           .form__item-category--content
-          = f.select :category_id, ["1"], prompt: "選択してください", class: "item_category"
+          .sell__about__right__wrap-box.parent
+            = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'item_category'}
      
       .form__item-brand
         .form_label
