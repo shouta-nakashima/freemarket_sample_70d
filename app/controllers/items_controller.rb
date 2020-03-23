@@ -29,12 +29,12 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
     @category_parent_array << parent.name
     end
-    # Item.create(item_params)
-    if @item.save
-      redirect_to root_path
-    else
-      render new_items_path
-    end
+    Item.create(item_params)
+    # if @item.save
+    #   redirect_to root_path
+    # else
+    #   render new_items_path
+    # end
   end
   def edit
 
@@ -54,7 +54,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :introduction, :price, :brand, :prefecture_code_id, :category_id,  :item_condition_id, :preparation_day_id, :postage_payer_id, :user_id, images_attributes: [:src, :item_id, :created_at, :update_at]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :introduction, :price, :brand, :prefecture_code_id, :category_id,  :item_condition_id, :preparation_day_id, :postage_payer_id, :user_id, images_attributes: [:src, :item_id, :created_at, :update_at])
 
   end
 
