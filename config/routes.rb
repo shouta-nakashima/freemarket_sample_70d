@@ -1,16 +1,32 @@
 Rails.application.routes.draw do
 
+
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
+  devise_scope :user do
+    get 'destinations', to: 'users/registrations#new_destination'
+    post 'destinations', to: 'users/registrations#create_destination'
+  end
+
+  root to: "home#index"
+
+  resources :home, only: [:index, :new]
+
+  resources :items, only: [:index, :new, :create, :update, :destroy, :show, :edit]
+  resources :users, only: [:index, :new, :create, :destroy, :show]
+  resources :cards, only: [:index, :new, :create, :destroy, :edit, :update]
+
+
+
+
   get 'purchase/index'
   get 'purchase/done'
   # get 'card/new'
   # get 'card/show'
-  devise_for :users
-  root to: 'home#index'
-  resources :items, only: [:new, :create, :destroy, :show, :edit, :update]
-  resources :users, only: [:index, :new, :create, :destroy, :show] 
 
-
-  #クレジットカード登録、表示、削除
+    #クレジットカード登録、表示、削除
   # card/newはカード登録画面、'card#pay'はPAYJP登録通信、card/showは登録カード情報表示、'card#delete'は削除ボタン
   resources :card, only: [:new, :show] do
     collection do
@@ -29,25 +45,6 @@ Rails.application.routes.draw do
       get 'done', to: 'purchase#done'
     end
   end
-
-
-
-  devise_for :users, controllers: {
-    registrations: 'users/registrations',
-  }
-  devise_scope :user do
-    get 'destinations', to: 'users/registrations#new_destination'
-    post 'destinations', to: 'users/registrations#create_destination'
-  end
-
-  root to: "home#index"
-
-  resources :home, only: [:index, :new]
-
-  resources :items, only: [:index, :new, :create, :update, :destroy, :show, :edit]
-  resources :users, only: [:index, :new, :create, :destroy, :show]
-  resources:cards, only: [:index, :new, :create, :destroy, :edit, :update]
-
 end
 
 
