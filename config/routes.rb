@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :home, only: [:index, :new]
 
-　resources :items, only: [:index, :new, :create, :update, :destroy, :show, :edit]
+  resources :items, only: [:index, :new, :create, :update, :destroy, :show, :edit]
   resources :users, only: [:index, :new, :create, :destroy, :show]
   resources:cards, only: [:index, :new, :create, :destroy, :edit, :update]
 

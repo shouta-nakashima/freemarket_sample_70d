@@ -5,112 +5,107 @@
 
   .form__item
   = form_with model: @item, local: true do |f|
-    .form__item-image--body
-      .form__item-image
-        .form_label
-          %label 出品画像
-          %span 必須
-        %P 最大10枚までアップロードできます
-        .form__item-image--content
-          %label{for: "item_images_attributes_0_image", class: "abel-box", id: "label-box--0"}
-            %p クリックしてファイルをアップロード
+    .form__item-background
+      .form__item-image--body
+        - if flash[:error].present?
+          %ul.errors
+            - flash[:error].each do |e|
+              %li= e
+        .form__item-image
+          .form_label
+            %label 出品画像
+            %span 必須
+          %P 最大10枚までアップロードできます
+          .form__item-image--content
+            .prev-content
+            .label-content
+              %label{for: "item_images_attributes_0_src", class: "label-box", id: "label-box--0"}
+                %pre.label-box__text-visible クリックしてファイルをアップロード
+            .hidden-content
+              = f.fields_for :images do |i|
+                = i.file_field :src, class: "hidden-field"
+                %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][src]", id: "item_images_attributes_1_src" }
+                %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][src]", id: "item_images_attributes_2_src" }
+                %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][src]", id: "item_images_attributes_3_src" }
+                %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][src]", id: "item_images_attributes_4_src" }
 
-        .hidden-content
-          = f.fields_for :images do |i|
-            = i.file_field :image, class: "hidden-field"
-            %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-            %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-            %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-            %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
 
-    .form__item-name--body
-      .form__item-name
-        .form_label
-          %label 商品名
-          %span 必須
-        = f.text_area :name, placeholder: "商品名を入力 40文字まで"
+      .form__item-name--body
+        .form__item-name
+          .form_label
+            %label 商品名
+            %span 必須
+          = f.text_area :name, placeholder: "商品名を入力 40文字まで"
 
-      .form__item-discription
-        .form_label
-          %label 商品の説明
-          %span 必須
-        = f.text_area :introduction, placeholder: "商品の説明（必須1,000文字以内）&#13;&#10;（色、素材、材、重さ、定価、注意点など）&#13;&#10;&#13;&#10;例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。".html_safe 
+        .form__item-discription
+          .form_label
+            %label 商品の説明
+            %span 必須
+          = f.text_area :introduction, placeholder: "商品の説明（必須1,000文字以内）&#13;&#10;（色、素材、材、重さ、定価、注意点など）&#13;&#10;&#13;&#10;例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。".html_safe 
 
-    .form__item-category--body
-      %p 商品の詳細
-      .form__item-category
-        .form_label
-          %label カテゴリー
-          %span 必須
-          .form__item-category--content
-          = f.select :category_id, [1], prompt: "カ〜〜テゴリ合体待ち〜〜", class: "item_category"
+      .form__item-category--body
+        %p 商品の詳細
+        .form__item-category
+          .form_label
+            %label カテゴリー
+            %span 必須
+            .form__item-category--content
+            = f.select :category_id, [1], prompt: "カ〜〜テゴリ合体待ち〜〜", class: "item_category"
 
-      .form__item-brand
-        .form_label
-          %label ブランド
-          %span 任意
-          .form__item-brand--content
-          = f.text_area :brand, placeholder: "ブランド名があれば記入してください"
+        .form__item-brand
+          .form_label
+            %label ブランド
+            %span 任意
+            .form__item-brand--content
+            = f.text_area :brand, placeholder: "ブランド名があれば記入してください"
 
-      .form__item-condition
-        .form_label
-          %label 商品の状態
-          %span 必須
-          .form__item-condition--content
-          = f.collection_select :item_condition_id, ItemCondition.all, :id, :name, {prompt: '選択して下さい'}
+        .form__item-condition
+          .form_label
+            %label 商品の状態
+            %span 必須
+            .form__item-condition--content
+            = f.collection_select :item_condition_id, ItemCondition.all, :id, :name, {prompt: '選択して下さい'}
 
-    .form__item-postage_payer--body
-      %p 配送について
-      .form__item-postage_payer
-        .form_label
-          %label 配送料の負担
-          %span 必須
-          .form__item-postage_payer--content
-          = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, {prompt: '選択して下さい'}
+      .form__item-postage_payer--body
+        %p 配送について
+        .form__item-postage_payer
+          .form_label
+            %label 配送料の負担
+            %span 必須
+            .form__item-postage_payer--content
+            = f.collection_select :postage_payer_id, PostagePayer.all, :id, :name, {prompt: '選択して下さい'}
 
-      .form__item-prefecture_code
-        .form_label
-          %label 発送元の地域
-          %span 必須
-          .form__item-prefecture_code--content
-          = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, {prompt: '選択して下さい'}, include_blank: false
+        .form__item-prefecture_code
+          .form_label
+            %label 発送元の地域
+            %span 必須
+            .form__item-prefecture_code--content
+            = f.collection_select :prefecture_code_id, PrefectureCode.all, :id, :name, {prompt: '選択して下さい'}
 
-      .form__item-preparation_day
-        .form_label
-          %label 発送までの日数
-          %span 必須
-          .form__item-preparation_day--content
-          = f.collection_select :preparation_day_id, PreparationDay.all, :id, :name, {prompt: '選択して下さい'}
+        .form__item-preparation_day
+          .form_label
+            %label 発送までの日数
+            %span 必須
+            .form__item-preparation_day--content
+            = f.collection_select :preparation_day_id, PreparationDay.all, :id, :name, {prompt: '選択して下さい'}
 
-    .form__item-price--body
-      %p 価格（¥300〜9,999,999）
-      .form__item-price
-        .form__item-price-label
-          %label 販売価格
-          %span 必須
-        .form__item-price-select
-          %span ¥
-          = f.text_area :price, placeholder: "0"
+      .form__item-price--body
+        %p 価格（¥300〜9,999,999）
+        .form__item-price
+          .form__item-price-label
+            %label 販売価格
+            %span 必須
+          .form__item-price-select
+            %span ¥
+            = f.text_area :price, placeholder: "0"
 
-      -# .form__item-fee
-      -#   .form__item-fee-label
-      -#     %label 販売手数料（10%）
-      -#     %span ー
+        .form__item--submit
+          = f.submit "出品する", class: "form__submit"
 
-      -# .form__item-total
-      -#   %hr
-      -#   .form__item-total-label
-      -#     %label 販売利益
-      -#     %span ー
-
-      .form__item--submit
-        = f.submit "出品する", class: "form__submit"
-
-      .form__item--link
-        = link_to "items_path", class: "form__btn" do
-          もどる
-
-      %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+        .form__item--link
+          = link_to "items_path", class: "form__btn" do
+            もどる
+        %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 
   .item-footer
     %p プライバシーポリシー　メルカリ利用規約　特定商取引に関する表記
