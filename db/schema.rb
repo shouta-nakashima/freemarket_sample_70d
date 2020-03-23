@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_03_17_101530) do
+ActiveRecord::Schema.define(version: 2020_03_22_055521) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -21,10 +20,6 @@ ActiveRecord::Schema.define(version: 2020_03_17_101530) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
-
-
-ActiveRecord::Schema.define(version: 2020_03_22_055521) do
-
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -60,18 +55,19 @@ ActiveRecord::Schema.define(version: 2020_03_22_055521) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.text "introduction"
-    t.string "category_id"
-    t.string "brand"
-    t.string "item_condition_id"
-    t.string "postage_payer_id"
-    t.string "prefecture_code_id"
+    t.string "name", null: false
+    t.text "introduction", null: false
+    t.integer "price", null: false
+    t.integer "prefecture_code", null: false
+    t.string "item_images_id", null: false
+    t.string "category_id", null: false
+    t.string "brand_id"
+    t.string "item_condition_id", null: false
     t.string "preparation_day_id"
-    t.integer "price"
-    t.string "seller_id"
+    t.string "postage_payer_id", null: false
+    t.string "size_id", null: false
+    t.string "seller_id", null: false
     t.string "buyer_id"
-    t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -97,9 +93,6 @@ ActiveRecord::Schema.define(version: 2020_03_22_055521) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
   add_foreign_key "cards", "users"
-
   add_foreign_key "images", "items"
-
 end
