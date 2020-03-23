@@ -1,10 +1,20 @@
 class Item < ApplicationRecord
+
+
+  has_one :card
+
+  # Itemモデルで 「購入者」「出品者」を取り出せるようにする。
+  # userテーブルの「id」とitemsテーブルの「buyer_id」「saler_id」が紐づく
+  belongs_to :seller, class_name: "User"
+  belongs_to :buyer, class_name: "User"
+
+end
+
   # include JpPrefecture
   # jp_prefecture :prefecture_code
   belongs_to :user, optional:true
 
-  # belongs_to :seller, class_name: "User",foreign_key: 'user_id'
-  # belongs_to :buyer, class_name: "User",foreign_key: 'user_id'
+ 
 
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
@@ -15,3 +25,4 @@ class Item < ApplicationRecord
   belongs_to_active_hash :preparation_day
   belongs_to_active_hash :prefecture_code
 end
+
