@@ -1,7 +1,6 @@
 class Item < ApplicationRecord
-  include JpPrefecture
-  jp_prefecture :prefecture_code
-
+  # include JpPrefecture
+  # jp_prefecture :prefecture_code
   belongs_to :user, optional:true
 
   # belongs_to :seller, class_name: "User",foreign_key: 'user_id'
@@ -14,4 +13,5 @@ class Item < ApplicationRecord
   belongs_to_active_hash :item_condition
   belongs_to_active_hash :postage_payer
   belongs_to_active_hash :preparation_day
+  belongs_to_active_hash :prefecture_code
 end
