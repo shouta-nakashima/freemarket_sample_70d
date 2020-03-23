@@ -111,3 +111,4 @@ gem 'hirb'
 
 gem 'hirb-unicode'
 
+gem 'rails-ujs'
