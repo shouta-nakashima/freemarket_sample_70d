@@ -235,9 +235,7 @@
         p {
           color: rgb(136, 136, 136);
           font-size: 14px;
-          font-weight: 600;
-          line-height: 1.4em;
-          margin-bottom: 24px;
+          font-weight: 600px;
           width: 620px;
           padding-left: 40px;
         }
@@ -252,7 +250,7 @@
             label {
               font-size: 14px;
               font-weight: 600;
-              line-height: 1.4em;
+              text-align: center;
               width: 70px;
               height: 19px;
             }
@@ -280,11 +278,11 @@
             margin: auto;
             width: 620px;
             height: 48px;
-            margin-bottom: 10px;
+            margin-top: 10px;
           }
         }
         .form__item-brand {
-          padding-top: 60px;
+          padding-top: 150px;
           width: 620px;
           margin: auto;
           .form_label {
@@ -381,7 +379,7 @@
           font-size: 14px;
           font-weight: 600;
           line-height: 1.4em;
-          margin-bottom: 24px;
+          margin-bottom: 30px;
           width: 620px;
           padding-left: 40px;
         }

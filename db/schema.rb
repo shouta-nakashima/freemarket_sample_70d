@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_03_22_055521) do
 
+
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "customer_id", null: false

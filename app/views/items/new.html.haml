@@ -50,7 +50,7 @@
             %label カテゴリー
             %span 必須
             .form__item-category--content
-            = f.select :category_id, [1], prompt: "カ〜〜テゴリ合体待ち〜〜", class: "item_category"
+              = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
 
         .form__item-brand
           .form_label
