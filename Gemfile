@@ -46,6 +46,9 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+
 end
 
 group :development do
@@ -95,9 +98,27 @@ gem "devise"
 
 gem 'pry-rails'
 
+
 gem 'payjp'
 
 
+gem 'jquery-ui-rails'
+
+gem 'active_hash'
+
+gem 'jp_prefecture'
+
 gem 'jquery-rails'
 
-gem 'jquery-ui-rails'
+gem 'rails-i18n'
+
+gem 'devise-i18n'
+
+gem 'devise-i18n-views'
+
+gem 'hirb'
+
+gem 'hirb-unicode'
+
+gem 'rails-ujs'
+
