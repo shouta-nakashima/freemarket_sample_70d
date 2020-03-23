@@ -98,6 +98,12 @@ gem "devise"
 
 gem 'pry-rails'
 
+
+gem 'payjp'
+
+
+gem 'jquery-ui-rails'
+
 gem 'active_hash'
 
 gem 'jp_prefecture'
@@ -110,8 +116,5 @@ gem 'devise-i18n'
 
 gem 'devise-i18n-views'
 
-gem 'hirb'
-
-gem 'hirb-unicode'
-
 gem 'rails-ujs'
+
