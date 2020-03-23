@@ -116,9 +116,9 @@ gem 'devise-i18n'
 
 gem 'devise-i18n-views'
 
-gem 'hirb'
+# gem 'hirb'
 
-gem 'hirb-unicode'
+# gem 'hirb-unicode'
 
 gem 'rails-ujs'
 
