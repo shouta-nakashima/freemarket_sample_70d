@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
 
   #クレジットカード登録、表示、削除
+  # card/newはカード登録画面、'card#pay'はPAYJP登録通信、card/showは登録カード情報表示、'card#delete'は削除ボタン
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   end
 
 #クレジットカードでの購入 
-
+# 'purchase#index'は購入確認画面、'purchase#pay'はPAYJP購入通信、'purchase#done'支払い完了画面
   resources :purchase, only: [:index] do
     collection do
       get 'index', to: 'purchase#index'
