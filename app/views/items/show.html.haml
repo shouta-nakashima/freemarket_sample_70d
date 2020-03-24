@@ -22,7 +22,7 @@
 
   .item-box
     .item-name
-      俺のホームレンべェット草
+      = @item.name
     .item-content
       .item-photo
         .photo-drag
@@ -40,61 +40,81 @@
             %td 俺
           %tr
             %th カテゴリー
-            %td スポーツ<br>野球<br>バット
+            %td
+              = @category.name
+
           %tr
             %th ブランド
-            %td ノーブランド
-          %tr
-            %th 商品サイズ
-            %td なし
+            %td
+              = @item.brand
+          -# %tr
+          -#   %th 商品サイズ
+          -#   %td なし
           %tr
             %th 商品状態
-            %td 中古
+            %td
+              = @condition.name
           %tr
             %th 配送料負担
-            %td 出品者負担
-          %tr
-            %th 配送方法
-            %td 楽ちんナカシマ便
+            %td
+              = @postage_payer.name
+          -# %tr
+          -#   %th 配送方法
+          -#   %td 
           %tr
             %th 配送元地域
-            %td 東京都
+            %td 
+              = @prefecture_code.name
           %tr
             %th 配送日の目安
-            %td 1日-2日
+            %td 
+              = @preparation_day.name
     .item-middle-content
       .item-price-box
         %section.buy
-          %span.praice ¥13,000
+          = @item.price
           %span.tax="(税込)"
           %span.Postage 送料込み
       .buybtn
         =link_to "購入画面に進む","/"
 
+    - if @item.seller_id == current_user.id
+      .item__affix
+        .item__affix__edit
+          = link_to '商品の編集', edit_item_path(@item)
+        -# .item__affix__delete
+        -#   = link_to '商品の削除', item_path(@item),method: :delete
+    - else
+      .item__affix2
+        .item__affix2__buy
+          = link_to "商品の購入", user_credit_card_path(current_user), data: {"turbolinks" => false}
+
     .item-dicription-content
       .item-description-inner
         %p.description
-          サイズ：XS、 S、M、L、XL
-          【使用場面】結婚式、入学式、卒業式、2次会、謝恩会、会食、演奏会、女子会、パーティー、同窓会、食事会、成人式
-          おしゃれに振り切れるバットです。
-          落ち感のあるとろみ生地は体のラインを拾わず着痩せ効果あり！
-          くびれメイクデザインとスレンダーなラインでほっそり美しいドレス姿に◎
-          結婚式パーティーからデイリーまで様々なシーンに対応。
-          二次会 花嫁 ドレス レース 魅力 同窓会 フォーマル 卒業式 通勤 スカートスーツ 披露宴 卒業式 ブライズメイド  ワンピース 通勤 フォーマル オフィススカート スーツ 卒業式 ママ
-          サイズ（cm)
-          カラー：写真より（写真参考）
-          商品について：
-          ◆サイズ表記は目安です。若干の誤差(約1-3cm前後)がある場合がございます。
-          ◆製造中（縫製、染色など）により商品において色味や柄、サイズに若干の誤差や、生地を織る際に糸の継ぎ目や多少のほつれ等が生じる場合がございますが、品質上の問題ではございませんのでご了承の上お買い求めくださいませ。
-          ◆購入する前にメッセージを残してください
-          \#ドレス
-          \#年次総会
-          \#コンサート
-          \#パーティー
-          \#成人式
-          \#二次会
-          \#花嫁
-          \#结婚式
+          = @item.introduction
+   
+          -# サイズ：XS、 S、M、L、XL
+          -# 【使用場面】結婚式、入学式、卒業式、2次会、謝恩会、会食、演奏会、女子会、パーティー、同窓会、食事会、成人式
+          -# おしゃれに振り切れるバットです。
+          -# 落ち感のあるとろみ生地は体のラインを拾わず着痩せ効果あり！
+          -# くびれメイクデザインとスレンダーなラインでほっそり美しいドレス姿に◎
+          -# 結婚式パーティーからデイリーまで様々なシーンに対応。
+          -# 二次会 花嫁 ドレス レース 魅力 同窓会 フォーマル 卒業式 通勤 スカートスーツ 披露宴 卒業式 ブライズメイド  ワンピース 通勤 フォーマル オフィススカート スーツ 卒業式 ママ
+          -# サイズ（cm)
+          -# カラー：写真より（写真参考）
+          -# 商品について：
+          -# ◆サイズ表記は目安です。若干の誤差(約1-3cm前後)がある場合がございます。
+          -# ◆製造中（縫製、染色など）により商品において色味や柄、サイズに若干の誤差や、生地を織る際に糸の継ぎ目や多少のほつれ等が生じる場合がございますが、品質上の問題ではございませんのでご了承の上お買い求めくださいませ。
+          -# ◆購入する前にメッセージを残してください
+          -# \#ドレス
+          -# \#年次総会
+          -# \#コンサート
+          -# \#パーティー
+          -# \#成人式
+          -# \#二次会
+          -# \#花嫁
+          -# \#结婚式
     .message-content
       .blank
       .message-container
@@ -103,7 +123,7 @@
         %textarea{class: "textarea"}
       .btn-box
         %input{type:"submit", class:"comment-btn",value: "コメントする"}
-
+     
     .social-media-content
       .social-media-box
         .facebook-square

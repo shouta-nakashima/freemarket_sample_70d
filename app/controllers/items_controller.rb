@@ -27,9 +27,9 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       render new_item_path
-      @category_parent_array = ["---"]
-      Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+    @category_parent_array << parent.name
     end
     # Item.create(item_params)
     # if @item.save
@@ -42,16 +42,24 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+  #   @image = @item.images
+    @condition = ItemCondition.find(@item.item_condition_id)
+    @postage_payer = PostagePayer.find(@item.postage_payer_id)
+    @preparation_day = PreparationDay.find(@item.preparation_day_id)
+    @category = Category.find(@item.category_id)
+    @prefecture_code = PrefectureCode.find(@item.prefecture_code_id)
+  #   @seller = User.find(@item.seller_id)
   end
 
   def update
     @item.update(item_update_params)
   end
 
-  def destroy
-    @item.destroy
-    redirect_to root_path
-  end
+  # def destroy
+  #   @item.destroy
+  #   redirect_to root_path
+  # end
 
   private
   def item_params
