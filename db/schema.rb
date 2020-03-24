@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_03_22_055521) do
 
 
+
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "customer_id", null: false
@@ -21,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_055521) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
+
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -58,17 +60,15 @@ ActiveRecord::Schema.define(version: 2020_03_22_055521) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "introduction", null: false
+    t.integer "category_id", null: false
+    t.text "brand"
+    t.integer "item_condition_id", null: false
+    t.integer "postage_payer_id", null: false
+    t.integer "prefecture_code_id", null: false
+    t.integer "preparation_day_id", null: false
     t.integer "price", null: false
-    t.integer "prefecture_code", null: false
-    t.string "item_images_id", null: false
-    t.string "category_id", null: false
-    t.string "brand_id"
-    t.string "item_condition_id", null: false
-    t.string "preparation_day_id"
-    t.string "postage_payer_id", null: false
-    t.string "size_id", null: false
-    t.string "seller_id", null: false
-    t.string "buyer_id"
+    t.integer "seller_id", null: false
+    t.integer "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
