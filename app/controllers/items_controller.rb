@@ -22,50 +22,44 @@ class ItemsController < ApplicationController
   end
 
   def create
-
     @item = Item.new(item_params)
-
-
     if @item.save
       redirect_to root_path
     else
       render new_item_path
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-    @category_parent_array << parent.name
+      @category_parent_array = ["---"]
+      Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
     end
-    Item.create(item_params)
+    # Item.create(item_params)
     # if @item.save
     #   redirect_to root_path
     # else
     #   render new_items_path
-    # end
+    end
   end
   def edit
-
   end
+
   def show
-
   end
+
   def update
     @item.update(item_update_params)
   end
+
   def destroy
     @item.destroy
     redirect_to root_path
   end
 
-
-
   private
   def item_params
-
     params.require(:item).permit(:name, :introduction, :price, :brand, :prefecture_code_id, :category_id,  :item_condition_id, :preparation_day_id, :postage_payer_id, :seller_id, images_attributes: [:src, :item_id, :created_at, :update_at]).merge(seller_id: current_user.id)
   end
 
 
   def set_item
     @item = Item.find(params[:id])
-
   end
 end
