@@ -14,5 +14,5 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :new, :create, :update, :destroy, :show, :edit]
   resources :users, only: [:index, :new, :create, :destroy, :show]
-  resources:cards, only: [:index, :new, :create, :destroy, :edit, :update]
+  resources :cards, only: [:index, :new, :create, :destroy, :edit, :update]
 end
