@@ -3,17 +3,17 @@
     %h1
       %a.signUp-thirdIcon{:href => "/"}
         = image_tag "logo.png"
-    %nav.signUp-third-bar
-      %ol.signUp-third-clearfix
-        %li.signUp-third-active
-          %text 会員情報
-          .signUp-third-status
-        %li.signUp-third-active-sec
-          %text 発送元情報
-          .signUp-third-status-second
-        %li.signUp-third-active-third
-          %text 完了
-          .signUp-third-status-third
+    -# %nav.signUp-third-bar
+    -#   %ol.signUp-third-clearfix
+    -#     %li.signUp-third-active
+    -#       %text 会員情報
+    -#       .signUp-third-status
+    -#     %li.signUp-third-active-sec
+    -#       %text 発送元情報
+    -#       .signUp-third-status-second
+    -#     %li.signUp-third-active-third
+    -#       %text 完了
+    -#       .signUp-third-status-third
   %main.signUp-third__main
     = form_for @destination do |f|
       = render "devise/shared/error_messages", resource: @destination
@@ -51,7 +51,7 @@
             .name-box
               必須
         .signUp-third-name__form
-          = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name
+          = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt: '選択して下さい'}
       %section.signUp-third-city
         .signUp-third-name__box
           .signUp-third-name__box__text
