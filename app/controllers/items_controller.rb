@@ -43,6 +43,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+
   #   @image = @item.images
     @condition = ItemCondition.find(@item.item_condition_id)
     @postage_payer = PostagePayer.find(@item.postage_payer_id)

@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
   def index
     @parents = Category.where(ancestry: nil)
-    @items = Item.limit(3).order("id DESC")
-
+    # @items = Item.limit(3).order("id DESC")
+    @items = Item.all.order("id DESC")
   end
 
   def new
