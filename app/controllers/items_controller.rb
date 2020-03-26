@@ -26,23 +26,28 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
+
       redirect_to new_item_path, flash: { error: @item.errors.full_messages }
       
       @category_parent_array = ["---"]
       Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
+        
     end
-    # Item.create(item_params)
-    # if @item.save
-    #   redirect_to root_path
-    # else
-    #   render new_items_path
     end
   end
   def edit
   end
 
   def show
+    @item = Item.find(params[:id])
+    @image = @item.images.includes(:item)
+    @condition = ItemCondition.find(@item.item_condition_id)
+    @postage_payer = PostagePayer.find(@item.postage_payer_id)
+    @preparation_day = PreparationDay.find(@item.preparation_day_id)
+    @category = Category.find(@item.category_id)
+    @prefecture_code = PrefectureCode.find(@item.prefecture_code_id)
+    @seller = User.find(@item.seller_id)
   end
 
   def update
@@ -50,8 +55,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path
+    @item = Item.find(params[:id])
+    if @item.destroy
+      redirect_to root_path
+    else
+      render item_path(item.seller_id,item.id)
+    end
   end
 
   private
