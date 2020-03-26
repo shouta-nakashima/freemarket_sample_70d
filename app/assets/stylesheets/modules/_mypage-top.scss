@@ -134,6 +134,79 @@ body {
         height: 500px;
         background-color: white;
         margin-top: 30px;
+
+// --------------------------
+        .requisition  {
+          font-weight: bold;
+          line-height: 30px;
+          text-align: center;
+          display: block;
+          margin: 40px auto;
+          width: 600px;
+          height: 30px;
+      }
+        .card-number  {
+          margin-left: 200px;
+          width: 100px;
+          height: 30px;
+      }
+      .Required{
+        font-size: 10px;
+        margin-left: 3px;
+        width: 100px;
+        height: 30px;
+        background-color: red;
+        color: white;
+      }
+      .number  {
+        margin: 10px auto 30px;
+        line-height: 50px;
+        text-align: center;
+        display: block;
+        width: 300px;
+        height: 30px;
+    }
+    .expiration  {
+        margin-left: 200px;
+    }
+    .month-year-select {
+      line-height: 30px;
+      margin: 20px auto 50px;
+    }
+    #exp_month{
+      margin-left: 200px;
+   }
+    .cvc-label  {
+      margin-left: 200px;
+    }
+    .cvc{
+      line-height: 30px;
+      text-align: center;
+      display: block;
+      margin: 5px auto 30px;
+      width: 300px;
+      height: 30px;
+     }
+
+     #token_submit{
+      line-height: 40px;
+      text-align: center;
+      display: block;
+      margin: 50px auto 30px;
+      width: 150px;
+      height: 40px;
+      background-color: rgb(240, 235, 235);
+      border-radius: 50px; 
+     }
+
+
+
+
+
+
+
+
+
         &_header {
           // background-image: url("profile-back.png");
           height: 210px;

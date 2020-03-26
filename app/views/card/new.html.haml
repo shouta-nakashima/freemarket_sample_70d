@@ -1,39 +1,134 @@
-= form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %label カード番号
-  = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-  %br
-  %label 有効期限
-  %select#exp_month{name: "exp_month", type: "text"}
-    %option{value: ""} --
-    %option{value: "1"}01
-    %option{value: "2"}02
-    %option{value: "3"}03
-    %option{value: "4"}04
-    %option{value: "5"}05
-    %option{value: "6"}06
-    %option{value: "7"}07
-    %option{value: "8"}08
-    %option{value: "9"}09
-    %option{value: "10"}10
-    %option{value: "11"}11
-    %option{value: "12"}12
-  %span 月/
-  %select#exp_year{name: "exp_year", type: "text"}
-    %option{value: ""} --
-    %option{value: "2019"}19
-    %option{value: "2020"}20
-    %option{value: "2021"}21
-    %option{value: "2022"}22
-    %option{value: "2023"}23
-    %option{value: "2024"}24
-    %option{value: "2025"}25
-    %option{value: "2026"}26
-    %option{value: "2027"}27
-    %option{value: "2028"}28
-    %option{value: "2029"}29
-  %span 年
-  %br
-  %label セキュリティコード
-  = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-  #card_token
-  = submit_tag "追加する", id: "token_submit"
+
+= render 'users/mypage-header'
+%body
+  .wrapper
+    .wrapper_main
+      %nav.wrapper_main_profile
+        %label.requisition クレジットカードを登録してください
+        = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+          %label.card-number カード番号
+          %label.Required 必須
+          %br
+          = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+          %br
+          %label.expiration 有効期限
+          %label.Required 必須
+          %br
+          .month-year-select
+            %select#exp_month{name: "exp_month", type: "text"}
+              %option{value: ""} --
+              %option{value: "1"}01
+              %option{value: "2"}02
+              %option{value: "3"}03
+              %option{value: "4"}04
+              %option{value: "5"}05
+              %option{value: "6"}06
+              %option{value: "7"}07
+              %option{value: "8"}08
+              %option{value: "9"}09
+              %option{value: "10"}10
+              %option{value: "11"}11
+              %option{value: "12"}12
+            %span.month 月/
+            %select#exp_year{name: "exp_year", type: "text"}
+              %option{value: ""} --
+              %option{value: "2019"}19
+              %option{value: "2020"}20
+              %option{value: "2021"}21
+              %option{value: "2022"}22
+              %option{value: "2023"}23
+              %option{value: "2024"}24
+              %option{value: "2025"}25
+              %option{value: "2026"}26
+              %option{value: "2027"}27
+              %option{value: "2028"}28
+              %option{value: "2029"}29
+            %span.year 年
+            %br
+            %br
+            %label.cvc-label セキュリティコード
+            %label.Required 必須
+            = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+            #card_token
+            = submit_tag "追加する", id: "token_submit"
+
+
+
+
+      %nav.wrapper_main_side
+        %ul.wrapper_main_side_menu
+          %li.wrapper_main_side_menu_name
+            %p マイページ
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name 
+            %p お知らせ
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name 
+            %p やることリスト
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name 
+            %p いいね！一覧
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name 
+            %p 出品する
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name 
+            %p 出品した商品-出品中
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p 出品した商品-取引中
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p 出品した商品-売却済み
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p 購入した商品-取引中
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p 購入した商品-過去の取引
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p ニュース一覧
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p 評価一覧
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p ガイド
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p お問い合わせ
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name_title
+            %h1 メルペイ
+          %li.wrapper_main_side_menu_name
+            %p 残高・振込申請
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p ポイント
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name_title_a
+            %h2 設定
+          %li.wrapper_main_side_menu_name
+            %p プロフィール
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p 発送元・お届け先住所変更
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            = link_to "支払い方法", card_index_path, class:"pay_mean"
+            %i_1.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p メール/パスワード
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p 本人情報
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            %p 電話番号の確認
+            %i.fa.fa-angle-right
+          %li.wrapper_main_side_menu_name
+            = link_to "ログアウト", root_path, class:"log_out"
+            %i_2.fa.fa-angle-right
+= render 'home/home-footer'
+
