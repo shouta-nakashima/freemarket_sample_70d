@@ -15,6 +15,6 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1'
     }
     config.fog_directory  = 'f70-team-d'
-    config.asset_host = 'https://s3.amazonaws.com/f70-team-d'
+    config.asset_host = 'https://f70-team-d.s3.amazonaws.com'
   end
 end
