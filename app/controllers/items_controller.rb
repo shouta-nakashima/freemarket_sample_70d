@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(name: params[:parent_name]).children
+    @category_children = Category.find(params[:parent_name]).children
   end
 
   def get_category_grandchildren
@@ -39,27 +39,59 @@ class ItemsController < ApplicationController
     end
   end
   def edit
+    @item = Item.find(params[:id])
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
   end
 
   def show
     @item = Item.find(params[:id])
-  #   @image = @item.images
+    @image = @item.images.includes(:item)
     @condition = ItemCondition.find(@item.item_condition_id)
     @postage_payer = PostagePayer.find(@item.postage_payer_id)
     @preparation_day = PreparationDay.find(@item.preparation_day_id)
     @category = Category.find(@item.category_id)
     @prefecture_code = PrefectureCode.find(@item.prefecture_code_id)
-  #   @seller = User.find(@item.seller_id)
+    @seller = User.find(@item.seller_id)
   end
+
+  # def show
+  #   @item = Item.find(params[:id])
+  #   @image = @item.images.includes(:item)
+  #   @condition = ItemCondition.find(@item.item_condition_id)
+  #   @postage_payer = PostagePayer.find(@item.postage_payer_id)
+  #   @preparation_day = PreparationDay.find(@item.preparation_day_id)
+  #   @category = Category.find(@item.category_id)
+  #   @prefecture_code = PrefectureCode.find(@item.prefecture_code_id)
+  #   # @seller = User.find(@item.seller_id)
+  # end
 
   def update
-    @item.update(item_update_params)
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to item_path
   end
 
-  # def destroy
-  #   @item.destroy
-  #   redirect_to root_path
-  # end
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
+  end
 
   private
   def item_params

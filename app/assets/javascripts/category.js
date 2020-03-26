@@ -13,9 +13,10 @@ $(function(){
                        </div>`;
     $('.form__item-category--content').append(childSelectHtml);
   }
-  $('#parent_category').on('change', function(){
-    var parentCategory = document.getElementById('parent_category').value;
-    if (parentCategory != "---"){ 
+  $('#item_category_id').on('change', function(){
+    var parentCategory = $('#item_category_id').val()
+    console.log(parentCategory)
+    if (parentCategory != ""){ 
       $.ajax({
         url: '/items/get_category_children',
         type: 'GET',
@@ -24,6 +25,7 @@ $(function(){
       })
       .done(function(children){
         $('#children_wrapper').remove(); 
+        $('#child_category').remove(); 
         $('#grandchildren_wrapper').remove();
         var insertHTML = '';
         children.forEach(function(child){
@@ -35,7 +37,7 @@ $(function(){
         alert('カテゴリー取得に失敗しました');
       })
     }else{
-      $('#children_wrapper').remove(); 
+      $('#child_category').remove(); 
       $('#grandchildren_wrapper').remove();
     }
   });
@@ -51,7 +53,7 @@ $(function(){
   }
   $('.form__item-category--content').on('change', '#child_category', function(){
     var childId = $('#child_category option:selected').data('category'); 
-    if (childId != "---"){ 
+    if (childId != ""){ 
       $.ajax({
         url: '/items/get_category_grandchildren',
         type: 'GET',

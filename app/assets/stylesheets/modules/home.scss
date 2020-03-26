@@ -512,7 +512,9 @@
     position: fixed;
     padding: 15px;
     a {
+      color: white;
       text-decoration: none;
+      padding: 20px 28px 95px 28px;
     }
     &__text {
       color: #fff;
@@ -521,10 +523,9 @@
       text-decoration: none;
       margin-bottom: 5px;
     }
-    &__icon {
-      img {
-        width: 60%;
-      }
-    }
   }
+      img {
+        width: 50%;
+    }
 }
+

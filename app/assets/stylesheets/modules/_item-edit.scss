@@ -1,0 +1,616 @@
+.wrapper {
+  width: 100%;
+  .form__item-header {
+    height: 128px;
+    display: flex;
+    background-color: #f5f5f5;
+    img {
+      display: block;
+      margin: auto;
+      height: 49px;
+      width: 185px;
+    }
+  }
+    .form__item-background {
+      background-color: #f5f5f5;
+      .form__item-image--body {
+        margin: auto;
+        width: 700px;
+        height: 300px;
+        background-color: #fff;
+        padding-top: 40px;
+        .form__item-image {
+          margin: auto;
+          background-color: white;
+          width: 620px;
+          height: 255px;
+          .form_label {
+            width: 620px;
+            height: 19px;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              width: 56px;
+              height: 19px;
+            }
+            span {
+              margin-left: 7px;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+            }
+          }
+          p {
+            margin-top: 16px;
+            margin-bottom: 16px;
+            font-size: 14px;
+          }
+          .form__item-image--content {
+            display: block;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #f5f5f5;
+            border-width: 1px;
+            border-style: dashed;
+            width: 620px;
+            height: 150px;
+            border-color: rgb(204, 204, 204);
+            .prev-content {
+              display: flex;
+              .preview-box {
+                height: 162px;
+                width: 112px;
+                margin: 0 15px 10px 0;
+                .upper-box {
+                  height: 112px;
+                  width: 100%;
+                  img{
+                    width: 112px;
+                    height: 112px;
+                  }
+                }
+                .lower-box {
+                  display: flex;
+                  text-align: center;
+                  .update-box {
+                    color: #00b0ff;
+                    width: 50%;
+                    height: 50px;
+                    line-height: 50px;
+                    border: 1px solid #eee;
+                    background: #f5f5f5;
+                    cursor: pointer;
+                  }
+                  .delete-box {
+                    color: #00b0ff;
+                    width: 50%;
+                    height: 50px;
+                    line-height: 50px;
+                    border: 1px solid #eee;
+                    background: #f5f5f5;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+            .label-content{
+              margin-bottom: 10px;
+              width: 620px;
+              margin: auto;
+              .label-box {
+                display: block;
+                border: 1px dashed #ccc;
+                position: relative;
+                background: #f5f5f5;
+                width: 100%;
+                height: 162px;
+                cursor: pointer;
+                .label-box__text-visible {
+                  position: absolute;
+                  top: 50%;
+                  left: 16px;
+                  right: 16px;
+                  text-align: center;
+                  font-size: 14px;
+                  line-height: 1.5;
+                  font-weight: bold;
+                  -webkit-transform: translate(0, -50%);
+                  transform: translate(0, -50%);
+                  pointer-events: none;
+                  white-space: pre-wrap;
+                  word-wrap: break-word;
+                }
+              }
+            }
+            .hidden-content {
+              .hidden-field {
+                display: none;
+              }
+              .hidden-checkbox {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .form__item-name--body {
+        margin: auto;
+        background-color: white;
+        width: 700px;
+        height: 416px;
+        .form__item-name {
+          margin: auto;
+          padding-top: 40px;
+          padding-bottom: 20px;
+          width: 620px;
+          height: 83px;
+          .form_label {
+            width: 620px;
+            height: 19px;
+            margin-bottom: 16px;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              width: 42px;
+              height: 19px;
+            }
+            span {
+              margin-left: 7px;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+              width: 32px;
+              height: 16px;
+            }
+          }
+          textarea {
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            background-color: #fff;
+            width: 620px;
+            height: 48px;
+            padding-left: 15px;
+            padding-top: 10px;
+          }
+        }
+        .form__item-discription {
+          margin: auto;
+          padding-bottom: 30px;
+          width: 620px;              
+          height: 221px;
+          .form_label {
+            width: 620px;
+            height: 19px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              width: 70px;
+              height: 19px;
+            }
+            span {
+              margin-left: 7px;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+              width: 32px;
+              height: 16px;
+            }
+          }
+          textarea {
+            padding: 13px 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            background-color: #fff;
+            width: 620px;
+            height: 154px;
+          }
+        }
+      }
+      .form__item-category--body {
+        margin: auto;
+        width: 700px;
+        height: 444px;
+        background-color: #fff;
+        p {
+          color: rgb(136, 136, 136);
+          font-size: 14px;
+          font-weight: 600px;
+          width: 620px;
+          padding-left: 40px;
+        }
+        .form__item-category {
+          width: 620px;
+          margin: auto;
+          .form_label_text {
+            width: 620px;
+            height: 19px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              text-align: center;
+              width: 70px;
+              height: 19px;
+            }
+            span {
+              margin-left: 7px;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+              width: 32px;
+              height: 16px;
+            }
+          }
+          .form__item-category__contents{
+            margin-top: 20px;
+          }
+        }
+        .form__item__brand {
+          padding-top: 200px;
+          width: 620px;
+          margin: auto;
+          .form_label {
+            width: 620px;
+            height: 19px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              width: 70px;
+              height: 19px;
+            }
+            span {
+              margin-left: 7px;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #bfbfbf;
+              color: #fff;
+              width: 32px;
+              height: 16px;
+            }
+          }
+          .form__item-brand--content {
+            padding-bottom: 15px;
+          }
+          textarea {
+            padding: 12px 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            background-color: #fff;
+            margin: auto;
+            width: 620px;
+            height: 48px;
+            margin-bottom: 10px;
+          }
+        }
+        .form__item-condition {
+          margin-top: 100px;
+          width: 620px;
+          margin: auto;
+          .form_label {
+            width: 620px;
+            height: 19px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              width: 70px;
+              height: 19px;
+            }
+            span {
+              margin-left: 7px;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+              width: 32px;
+              height: 16px;
+            }
+          }
+          .form__item-condition--content {
+            padding-bottom: 15px;
+          }
+          select {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            background-color: #fff;
+            margin: auto;
+            width: 620px;
+            height: 48px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .form__item-postage_payer__body {
+        margin: auto;
+        width: 700px;
+        height: 444px;
+        background-color: #fff;
+        .form__item-postage_payer--body__text {
+          padding-top: 70px;
+          color: rgb(136, 136, 136);
+          font-size: 14px;
+          font-weight: 600;
+          padding-left: 40px;
+        }
+        .form__item-postage__payer {
+          margin-left: 40px;
+          margin-top: 20px;
+          width: 620px;
+          background-color: #fff;
+          padding-bottom: 60px;
+          .form_label {
+            width: 620px;
+            height: 19px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              width: 70px;
+              height: 19px;
+            }
+            span {
+              margin-left: 7px;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+              width: 32px;
+              height: 16px;
+            }
+          }
+          .form__item-postage_payer--content {
+            padding-bottom: 15px;
+          }
+          select {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            background-color: #fff;
+            margin: auto;
+            width: 620px;
+            height: 48px;
+            margin-bottom: 10px;
+          }
+        }
+        .form__item-prefecture__code {
+          margin: auto;
+          width: 620px;
+          padding-bottom: 60px;
+          .form_label {
+            width: 620px;
+            height: 19px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              width: 70px;
+              height: 19px;
+            }
+            span {
+              margin-left: 7px;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+              width: 32px;
+              height: 16px;
+            }
+          }
+          .form__item-prefecture_code--content {
+            padding-bottom: 15px;
+          }
+          select {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            background-color: #fff;
+            margin: auto;
+            width: 620px;
+            height: 48px;
+            margin-bottom: 10px;
+          }
+        }
+        .form__item__preparation__day {
+          // margin-top: 60px;
+          margin-left: 40px;
+          width: 620px;
+          .form_label {
+            width: 620px;
+            height: 19px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              width: 70px;
+              height: 19px;
+            }
+            span {
+              margin-left: 7px;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              padding: 0 4px;
+              background-color: #ff0211;
+              color: #fff;
+              width: 32px;
+              height: 16px;
+            }
+          }
+          .form__item-preparation_day--content {
+            padding-bottom: 15px;
+          }
+          select {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            background-color: #fff;
+            margin: auto;
+            width: 620px;
+            height: 48px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .form__item-price--body {
+        margin: auto;
+        background-color: white;
+        width: 700px;
+        height: 500px;
+        display: block;
+        p {
+          margin: auto;
+          color: rgb(136, 136, 136);
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.4em;
+          margin-bottom: 24px;
+          width: 620px;
+        }
+        .form__item-price {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 40px 15px 40px;         
+          .form__item-price-label {
+            margin: auto;
+            width: 620px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              width: 70px;
+              height: 19px;
+            }
+            span {
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              padding-left: 7px;
+              padding-bottom: 2px;
+              background-color: #ff0211;
+              color: #fff;
+              width: 32px;
+              height: 16px;
+            }
+          }
+          .form__item-price-select {
+            display: flex;
+            margin: auto;
+            span {
+              font-size: 14px;
+              padding-right: 8px;
+              padding-top: 13px;
+            }
+            textarea {
+              text-align: right;
+              padding-top: 15px;
+              padding-right: 20px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              font-family: inherit;
+              font-size: inherit;
+              background-color: #fff;
+              width: 285px;
+              height: 48px;
+            }
+          }
+        }
+        .form__item--submit_a {
+          height: 50px;
+          margin-top: 30px;
+          text-align: center;
+          .sell__about__bottom-btn_submit {
+            height: 100px;
+            width: 80px;
+          }
+        }
+          .form__btn {
+            display: flex;
+            color: #0095ee;
+            display: flex;
+            width: 100%;
+            height: 20px;
+            justify-content: center;
+            text-decoration: none;
+            padding-bottom: 30px;
+          }
+        p{
+          padding-top: 30px;
+          font-size: 12px;
+          line-height: 1.4em;
+        }
+      }
+    }
+  .item-footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 170px;
+    margin: auto;
+    text-align: center;
+    background-color: #f5f5f5;
+    p {
+      font-size: 12px;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    img {
+      display: block;
+      margin: auto;
+      height: 49px;
+      width: 185px;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  }
+}
