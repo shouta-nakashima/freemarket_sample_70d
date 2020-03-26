@@ -31,11 +31,6 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
     @category_parent_array << parent.name
     end
-    # Item.create(item_params)
-    # if @item.save
-    #   redirect_to root_path
-    # else
-    #   render new_items_path
     end
   end
   def edit
@@ -56,10 +51,14 @@ class ItemsController < ApplicationController
     @item.update(item_update_params)
   end
 
-  # def destroy
-  #   @item.destroy
-  #   redirect_to root_path
-  # end
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      redirect_to root_path
+    else
+      render item_path(item.seller_id,item.id)
+    end
+  end
 
   private
   def item_params
