@@ -31,11 +31,6 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
     @category_parent_array << parent.name
     end
-    # Item.create(item_params)
-    # if @item.save
-    #   redirect_to root_path
-    # else
-    #   render new_items_path
     end
   end
   def edit
@@ -43,23 +38,27 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-  #   @image = @item.images
+    @image = @item.images.includes(:item)
     @condition = ItemCondition.find(@item.item_condition_id)
     @postage_payer = PostagePayer.find(@item.postage_payer_id)
     @preparation_day = PreparationDay.find(@item.preparation_day_id)
     @category = Category.find(@item.category_id)
     @prefecture_code = PrefectureCode.find(@item.prefecture_code_id)
-  #   @seller = User.find(@item.seller_id)
+    @seller = User.find(@item.seller_id)
   end
 
   def update
     @item.update(item_update_params)
   end
 
-  # def destroy
-  #   @item.destroy
-  #   redirect_to root_path
-  # end
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      redirect_to root_path
+    else
+      render item_path(item.seller_id,item.id)
+    end
+  end
 
   private
   def item_params
