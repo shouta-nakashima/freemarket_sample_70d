@@ -22,9 +22,7 @@ Rails.application.routes.draw do
   end
 
 
-
   resources :users, only: [:index, :new, :create, :destroy, :show]
-  resources :cards, only: [:index, :new, :create, :destroy, :edit, :update]
 
 
   #クレジットカード登録、表示、削除
@@ -41,7 +39,6 @@ Rails.application.routes.draw do
 
 #クレジットカードでの購入
 # 'purchase#index'は購入確認画面、'purchase#pay'はPAYJP購入通信、'purchase#done'支払い完了画面
-
 
   resources :purchase, only: [:index] do
     member do

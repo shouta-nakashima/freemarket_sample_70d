@@ -134,20 +134,26 @@
             新規投稿商品
       .productLists
         - @items.each do |item|
-          .productList
-            = link_to item_path(item) do
-              %figure.productList--img
-                -# = image_tag item.images[0].src.url
+          -if item.buyer_id.present?
+          -else
+            .productList-sell
+              = link_to item_path(item) do
+                %figure.productList--img
+                  = image_tag item.images[0].src.url
               .productList--body
                 %h3.name
                   = item.name
                 .datails
                   %ul
                     = item.price
+                    円
                     %li
                       %i.fa.fa-star.likeIcon::before
                         = "0"
                   %p (税込)
+
+
+
         -# .productList
         -#   %a{:href => "#"}
         -#     %figure.productList--img

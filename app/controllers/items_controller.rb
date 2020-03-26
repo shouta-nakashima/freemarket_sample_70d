@@ -43,14 +43,13 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-
-  #   @image = @item.images
+    @image = @item.images.includes(:item)
     @condition = ItemCondition.find(@item.item_condition_id)
     @postage_payer = PostagePayer.find(@item.postage_payer_id)
     @preparation_day = PreparationDay.find(@item.preparation_day_id)
     @category = Category.find(@item.category_id)
     @prefecture_code = PrefectureCode.find(@item.prefecture_code_id)
-  #   @seller = User.find(@item.seller_id)
+    @seller = User.find(@item.seller_id)
   end
 
   def update
