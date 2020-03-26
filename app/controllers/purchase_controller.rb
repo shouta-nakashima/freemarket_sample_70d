@@ -1,12 +1,11 @@
 class PurchaseController < ApplicationController
-  # before_action :set_item
+  before_action :set_item
 
   require 'payjp'
 
 
 
   def index
-    @item = Item.find(params[:id])
     @image = @item.images.includes(:item)
     card = Card.where(user_id: current_user.id).first  #cardsテーブルからpayjpの顧客IDを検索
     if card.blank?
@@ -22,7 +21,6 @@ class PurchaseController < ApplicationController
 
 
   def pay
-    @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
@@ -37,11 +35,11 @@ class PurchaseController < ApplicationController
 
 
 
-# private
+private
 
-#   def set_item
-#     @item = Item.find(params[:id])
-#   end
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
 
 end
