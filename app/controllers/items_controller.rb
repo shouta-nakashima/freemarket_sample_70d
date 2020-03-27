@@ -26,10 +26,13 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render new_item_path
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-    @category_parent_array << parent.name
+
+      redirect_to new_item_path, flash: { error: @item.errors.full_messages }
+      
+      @category_parent_array = ["---"]
+      Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+        
     end
     end
   end
