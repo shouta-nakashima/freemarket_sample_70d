@@ -1,10 +1,51 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+-# %label 登録クレジットカード情報
+-# %br
+-# = "**** **** **** " + @default_card_information.last4
+-# %br
+-# - exp_month = @default_card_information.exp_month.to_s
+-# - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+-# = exp_month + " / " + exp_year
+-# = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+-#   %input{ type: "hidden", name: "card_id", value: "" }
+-#   %button 削除する
+
+-# .productList
+-#   = link_to "トップ画面に戻る",root_path
+
+%body
+  .c-wrapper
+    .c-wrapper_header
+      .c-wrapper_header_btn
+        = image_tag src="/assets/logo.png", size: "175x50"
+    .c-wrapper_main
+      %section.c-header
+        %h1 登録クレジットカード情報
+      %section.cash
+        .cash__content
+          %p
+          = "**** **** **** " + @default_card_information.last4
+          %text.mon-year
+          - exp_month = @default_card_information.exp_month.to_s
+          %br
+          %br
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
+          .namahiro
+            = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              %button.deletebtn 削除する
+            %button.transitionbtn{onclick: "location.href='/'"} トップ画面に戻る
+
+          .productList
+    .c-futter
+      %ul.c-futter-texts
+        %li
+          %a{:href => "#"} 会社概要（運営会社）
+        %li
+          %a{:href => "#"} プライバシーポリシー
+        %li
+          %a{:href => "#"} FURIMA利用規約
+      .c-footer__logo
+        %a{:href => "/"}
+          = image_tag "logo-white.png"
+        %p ©︎ FURIMA

@@ -20,6 +20,9 @@
         height: 300px;
         background-color: #fff;
         padding-top: 40px;
+        li {
+          padding-bottom: 6px;
+        }
         .form__item-image {
           margin: auto;
           background-color: white;
@@ -145,7 +148,7 @@
 
         .form__item-name {
           margin: auto;
-          padding-top: 40px;
+          padding-top: 80px;
           padding-bottom: 20px;
           width: 620px;
           height: 83px;
@@ -186,7 +189,7 @@
             padding-top: 10px;
           }
         }
-        .form__item-discription {
+        .form__item-introduction {
           margin: auto;
           padding-bottom: 30px;
           width: 620px;              
@@ -549,9 +552,8 @@
             }
             span {
               font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-              font-size: 12px;
+              font-size: 14px;
               padding-left: 7px;
-              padding-bottom: 2px;
               background-color: #ff0211;
               color: #fff;
               width: 32px;
