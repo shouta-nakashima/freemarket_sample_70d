@@ -280,7 +280,9 @@
     %a{:href => "/"}
       = image_tag "logo-white.png"
     %p ©︎ FURIMA
-  .purchaseBtn
-    .purchaseBtn__icon
-      %a 出品する
-      = link_to image_tag("icon_camera.png", width: '375', alt: "出品する"), new_item_path, data: {"turbolinks" => false}
+  -if user_signed_in?
+    .purchaseBtn
+      .purchaseBtn__icon
+        %a 出品する
+        = link_to image_tag("icon_camera.png", width: '375', alt: "出品する"), new_item_path, data: {"turbolinks" => false}
+  -else
