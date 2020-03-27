@@ -12,33 +12,49 @@ class ItemsController < ApplicationController
     @category_parent_array << parent.name
     end
   end
-
   def get_category_children
     @category_children = Category.find_by(name: params[:parent_name]).children
   end
-
   def get_category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
-
   def create
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
     else
-
       redirect_to new_item_path, flash: { error: @item.errors.full_messages }
-      
       @category_parent_array = ["---"]
       Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
-        
     end
+    # Item.create(item_params)
+    # if @item.save
+    #   redirect_to root_path
+    # else
+    #   render new_items_path
     end
   end
   def edit
-  end
+    @item = Item.find(params[:id])
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
 
+    @category_parent_array = ["ーーー"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = ["ーーー"]
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = ["ーーー"]
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
+  end
   def show
     @item = Item.find(params[:id])
     @image = @item.images.includes(:item)
@@ -51,7 +67,14 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_update_params)
+    # @item = Item.find(params[:id])
+    if @item.update(item_update_params)
+      redirect_to item_path(@item)
+
+    else
+      flash[:edit] = "編集に失敗しました。必須項目は必要となりますので、ご注意ください。"
+      redirect_to edit_item_path(@item)
+    end
   end
 
   def destroy
@@ -62,13 +85,13 @@ class ItemsController < ApplicationController
       render item_path(item.seller_id,item.id)
     end
   end
-
   private
   def item_params
     params.require(:item).permit(:name, :introduction, :price, :brand, :prefecture_code_id, :category_id,  :item_condition_id, :preparation_day_id, :postage_payer_id, :seller_id, images_attributes: [:src, :item_id, :created_at, :update_at]).merge(seller_id: current_user.id)
   end
-
-
+  def item_update_params
+    params.require(:item).permit(:name, :introduction, :price, :brand, :prefecture_code_id, :category_id,  :item_condition_id, :preparation_day_id, :postage_payer_id, :seller_id, images_attributes: [:src, :item_id, :__destroy])
+  end
   def set_item
     @item = Item.find(params[:id])
   end

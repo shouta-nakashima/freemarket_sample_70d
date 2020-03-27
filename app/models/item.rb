@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-
+  validates :images,              presence: true
   validates :name,                presence: true, length: { maximum: 40 }
   validates :introduction,        presence: true, length: { maximum: 1000 }
   validates :price,               presence: true, inclusion: 300..9999999
@@ -21,7 +21,7 @@ class Item < ApplicationRecord
   # include JpPrefecture
   # jp_prefecture :prefecture_code
   belongs_to :user, optional:true
-
+  belongs_to :category
   belongs_to :seller, class_name: "User",foreign_key: 'seller_id'
   # belongs_to :buyer, class_name: "User",foreign_key: 'buyer_id'
 
