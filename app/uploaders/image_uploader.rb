@@ -22,7 +22,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    'board_placeholder.png'
+    '/Users/isseinagao/Documents/GitHub/freemarket_sample_70d/app/assets/images/profile-back.png'
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

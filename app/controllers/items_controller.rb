@@ -75,7 +75,7 @@ class ItemsController < ApplicationController
       flash[:edit] = "編集に失敗しました。必須項目は必要となりますので、ご注意ください。"
       redirect_to edit_item_path(@item)
     end
-  end
+  en
 
   def destroy
     @item = Item.find(params[:id])
@@ -90,7 +90,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :introduction, :price, :brand, :prefecture_code_id, :category_id,  :item_condition_id, :preparation_day_id, :postage_payer_id, :seller_id, images_attributes: [:src, :item_id, :created_at, :update_at]).merge(seller_id: current_user.id)
   end
   def item_update_params
-    params.require(:item).permit(:name, :introduction, :price, :brand, :prefecture_code_id, :category_id,  :item_condition_id, :preparation_day_id, :postage_payer_id, :seller_id, images_attributes: [:src, :item_id, :__destroy])
+    params.require(:item).permit(:name, :introduction, :price, :brand, :prefecture_code_id, :category_id,  :item_condition_id, :preparation_day_id, :postage_payer_id, images_attributes: [:src, :item_id, :id, :_destroy])
   end
   def set_item
     @item = Item.find(params[:id])
