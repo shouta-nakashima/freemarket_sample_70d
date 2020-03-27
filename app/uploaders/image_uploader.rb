@@ -2,10 +2,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
+  process resize_to_fit: [300, 300]
 
   # Choose what kind of storage to use for this uploader:
-  # 演算子|| aかbの少なくとも1つが真の場合に真 つまり開発かテストならtrue falseならfog(S3)へ保存
-  if Rails.env.development? || Rails.env.test?
+  # storage :file
+  # storage :fog
+  if Rails.env.development?
+    storage :file
+  elsif Rails.env.test?
     storage :file
   else
     storage :fog
@@ -17,6 +21,9 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def default_url
+    '/Users/isseinagao/Documents/GitHub/freemarket_sample_70d/app/assets/images/profile-back.png'
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -27,7 +34,6 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
-  process resize_to_fit: [100, 100]
   #
   # def scale(width, height)
   #   # do something
@@ -35,7 +41,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   # version :thumb do
-  #   process resize_to_fit: [50, 50]
+  # process resize_to_fit: [50, 50]
   # end
 
   # Add a white list of extensions which are allowed to be uploaded.

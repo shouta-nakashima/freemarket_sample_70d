@@ -17,7 +17,7 @@
                 .preview-box
                   .upper-box
                     - if image.persisted?
-                      -# = image_tag image.src.url, width: "112", height: "112", alt: "preview"
+                      = image_tag image.src.url, width: "112", height: "112", alt: "preview"
                   .lower-box
                     .update-box
                       %label.edit-btn 編集
@@ -31,10 +31,10 @@
               = f.fields_for :images do |i|
                 //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
                 = i.file_field :src, class: "hidden-field"
-                = i.check_box:_destroy, class: "hidden-checkbox"
+                = i.check_box :_destroy, class: "hidden-checkbox"
                 //5つのfile_fieldを準備するに当たって、足りない分を表示
               - @item.images.length.upto(4) do |i|
-                %input{name: "item[item_images_attributes][#{i}][src]", id: "item_images_attributes_#{i}_src", class:"hidden-field", type:"file"}
+                %input{name: "item[images_attributes][#{i}][src]", id: "item_images_attributes_#{i}_src", class:"hidden-field", type:"file"}
       .form__item-name--body
         .form__item-name
           .form_label
@@ -107,4 +107,5 @@
   .item-footer
     %p プライバシーポリシー　メルカリ利用規約　特定商取引に関する表記
     = image_tag src="logo-white.png"
+
     %p © FURIMA, Inc.
