@@ -18,7 +18,6 @@
                   .upper-box
                     - if image.persisted?
                       = image_tag image.src.url, width: "112", height: "112", alt: "preview"
-
                   .lower-box
                     .update-box
                       %label.edit-btn 編集
@@ -36,10 +35,6 @@
                 //5つのfile_fieldを準備するに当たって、足りない分を表示
               - @item.images.length.upto(4) do |i|
                 %input{name: "item[images_attributes][#{i}][src]", id: "item_images_attributes_#{i}_src", class:"hidden-field", type:"file"}
-
-           
-
-
       .form__item-name--body
         .form__item-name
           .form_label
@@ -58,7 +53,11 @@
             %label カテゴリー
             %span 必須
             .form__item-category--content
-             
+              = f.collection_select :category_id, Category.roots, :id , :name, {include_blank: "---", selected: @item.category&.root_id}, required: true, class: "select-category"
+              %br.select-category
+              -if @item.persisted?
+                = f.collection_select :category_id, @item.category.root.children, :id , :name, {include_blank: "---", selected: @item.category.parent_id}, required: true, class: "select-category", id:"child_category"
+                = f.collection_select :category_id, @item.category.siblings, :id , :name, {include_blank: "---", selected: @item.category_id}, required: true, class: "select-category", id:"grandchildren_wrapper"
         .form__item-brand
           .form_label
             %label ブランド
@@ -102,11 +101,11 @@
             = f.text_area :price, placeholder: "0"
         .form__item--submit
           = f.submit "編集する", class: 'sell__about__bottom-btn submit'
-          = link_to '商品の削除', item_path(@item),method: :delete
         .form__item--link
           = link_to "もどる", item_path, class: "form__btn" 
         %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
   .item-footer
     %p プライバシーポリシー　メルカリ利用規約　特定商取引に関する表記
     = image_tag src="logo-white.png"
+
     %p © FURIMA, Inc.

@@ -100,7 +100,7 @@
       background-color: white;
       width: 700px;
       height: 170px;
-  
+
       .item-price-box{
         display: flex;
         padding-top: 30px;
@@ -120,9 +120,6 @@
       }
     }
   }
-    
-    
-   
 
   .item-image-box {
     background-color: white;
@@ -140,7 +137,7 @@
       }
     }
   }
-  
+
   .buybtn{
     width: 700px;
     font-size: 14px;
@@ -162,6 +159,14 @@
           border-radius: 4px;
         }
         &__delete {
+
+          background-color: #3ccace;
+          width: 200px;
+          height: 45px;
+          text-align: center;
+          padding-top: 10px;
+          border-radius: 4px;
+
           input {
             background-color: #3ccace;
             width: 200px;
@@ -172,6 +177,7 @@
             font-size: 24px;
             font-weight: bold;
           }
+
         }
       }
       .item__affix2 {
@@ -317,7 +323,6 @@
         font-size: 20px;
       }
     }
- 
     .other-item-container{
       display: flex;
       justify-content: center;
@@ -375,9 +380,13 @@
         margin-left: 200px;
         Small{
           display: inline-block;
-         
+
         }
       }
     }
   }
+
 }
+
+
+
