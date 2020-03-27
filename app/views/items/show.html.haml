@@ -1,10 +1,8 @@
 .show-item
   %header.show-item__header
     %h1
-
       %a.signUp-topIcon
         = image_tag "logo.png" 
-
   .item-box
     .item-name
       = @item.name
@@ -49,7 +47,6 @@
           = @category.parent.name
           %br
           = @category.name
-
       %tr
         %th ブランド
         %td
@@ -75,9 +72,7 @@
         %section.buy
           = @item.price
           %span.tax 円
-
-          %span.Postage (税込)
-
+          %span.Postage (税込)
       .item-dicription-content
         .item-description-text
           コメント欄
@@ -91,13 +86,11 @@
           .item__affix__edit
             = link_to '商品の編集', edit_item_path(@item)
           .item__affix__delete
-
             = link_to '商品の削除', item_path(@item),method: :delete
       - else
         .item__affix2
           .item__affix2__buy
             = link_to "購入画面に進む", purchase_path(@item.id), data: {"turbolinks" => false}
-
   %footer.show-itemFooter
     %nav
       %ul
