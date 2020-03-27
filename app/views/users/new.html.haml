@@ -4,7 +4,7 @@
     .wrapper_main
       %nav.wrapper_main_cover
         .wrapper_main_cover_header
-          %h1 ログアウト
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
       %nav.wrapper_main_side
         %ul.wrapper_main_side_menu
           %li.wrapper_main_side_menu_name
@@ -19,8 +19,6 @@
           %li.wrapper_main_side_menu_name 
             %p いいね！一覧
             %i.fa.fa-angle-right
-          %li.wrapper_main_side_menu_name 
-            = link_to new_item_path(current_user_id) do
             %p 出品する
             %i.fa.fa-angle-right
           %li.wrapper_main_side_menu_name 
