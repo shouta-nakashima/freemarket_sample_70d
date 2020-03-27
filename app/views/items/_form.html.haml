@@ -1,35 +1,40 @@
 .wrapper
-  
   .form__item-header
     = image_tag src="logo.png"
-
   .form__item
   = form_with model: @item, local: true do |f|
     .form__item-background
       .form__item-image--body
-        - if flash[:error].present?
-          %ul.errors
-            - flash[:error].each do |e|
-              %li= e
         .form__item-image
+          = flash[:edit]
           .form_label
             %label 出品画像
             %span 必須
-          %P 最大10枚までアップロードできます
+          %P 最大5枚までアップロードできます
           .form__item-image--content
             .prev-content
+              - @item.images.each do |image|
+                .preview-box
+                  .upper-box
+                    - if image.persisted?
+                      = image_tag image.src.url, width: "112", height: "112", alt: "preview"
+                  .lower-box
+                    .update-box
+                      %label.edit-btn 編集
+                    .delete-box
+                      .delete-btn
+                        %span 削除
             .label-content
-              %label{for: "item_images_attributes_0_src", class: "label-box", id: "label-box--0"}
+              = f.label :"item_images_attributes_#{@item.images.length}_src", class: "label-box", id: "label-box--#{@item.images.length}" do
                 %pre.label-box__text-visible クリックしてファイルをアップロード
             .hidden-content
               = f.fields_for :images do |i|
+                //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
                 = i.file_field :src, class: "hidden-field"
-                %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][src]", id: "item_images_attributes_1_src" }
-                %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][src]", id: "item_images_attributes_2_src" }
-                %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][src]", id: "item_images_attributes_3_src" }
-                %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][src]", id: "item_images_attributes_4_src" }
-
-
+                = i.check_box:_destroy, class: "hidden-checkbox"
+                //5つのfile_fieldを準備するに当たって、足りない分を表示
+              - @item.images.length.upto(4) do |i|
+                %input{name: "item[item_images_attributes][#{i}][src]", id: "item_images_attributes_#{i}_src", class:"hidden-field", type:"file"}
       .form__item-name--body
         .form__item-name
           .form_label
