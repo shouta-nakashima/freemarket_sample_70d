@@ -111,3 +111,4 @@ has_many :items
 |preparation_day|string|null: false|
 ### Association
 has_many :items
+
